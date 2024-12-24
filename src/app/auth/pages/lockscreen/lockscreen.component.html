@@ -1,0 +1,35 @@
+<div class="card shadow-lg border-none m-lg-5">
+    <div class="card-body">
+        <div class="text-center mt-4">
+            <div class="mb-4 pb-2">
+                <a routerLink="/pages" href="index.html" class="auth-logo">
+                    <img src="assets/images/logo-dark.png" alt="" height="30" class="auth-logo-dark mx-auto">
+                    <img src="assets/images/logo-light.png" alt="" height="30" class="auth-logo-light mx-auto">
+                </a>
+            </div>
+            <h5 class="fs-3xl">Lock Screen</h5>
+            <p class="text-muted">Enter your password to unlock the screen!</p>
+        </div>
+        <div class="p-2 mt-4">
+            <div class="user-thumb text-center">
+                <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail avatar-lg" alt="thumbnail">
+                <h5 class="font-size-15 mt-3">Hi ! Richard Marshall</h5>
+            </div>
+            <div class="mt-4">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label" for="userpassword">Password or Pin</label>
+                        <input type="password" class="form-control password-input" id="userpassword" placeholder="Enter password or pin">
+                    </div>
+                    <div class="mb-2 mt-4">
+                        <button class="btn btn-primary w-100" routerLink="/pages">Unlock</button>
+                    </div>
+                </form><!-- end form -->
+            
+            </div>
+            <div class="mt-5 text-center">
+                <p class="mb-0">Not you ? return <a routerLink="/auth" class="fw-semibold text-primary text-decoration-underline"> Signin </a> </p>
+            </div>
+        </div>
+    </div><!-- end card body -->
+</div>

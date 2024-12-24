@@ -3,7 +3,6 @@
         <div class="layout-width">
             <div class="navbar-header">
                 <div class="d-flex">
-                    <!-- LOGO -->
                     <div class="navbar-brand-box horizontal-logo">
                         <a href="index.html" class="logo logo-dark">
                             <span class="logo-sm">
@@ -33,7 +32,7 @@
                         </button>
                     </div>
 
-                    <h4 class="mb-sm-0 header-item page-title lh-base">Doctors Dashboard</h4>
+                    <h4 class="mb-sm-0 header-item page-title lh-base">{{currentTitle}}</h4>
                 </div>
 
                 <div class="d-flex align-items-center">
@@ -629,7 +628,6 @@
                             </span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <!-- item-->
                             <h6 class="dropdown-header">Welcome Richard!</h6>
                             <a class="dropdown-item" href="pages-profile.html"><i
                                     class="mdi mdi-account-circle text-muted fs-lg align-middle me-1"></i> <span
@@ -664,7 +662,6 @@
         </div>
     </header>
 
-    <!-- removeNotificationModal -->
     <div id="removeNotificationModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -689,11 +686,9 @@
                     </div>
                 </div>
 
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <!-- removeCartModal -->
+            </div>
+        </div>
+    </div>
     <div id="removeCartModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -717,28 +712,10 @@
                             It!</button>
                     </div>
                 </div>
-
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <ul class="nav nav-underline menu-tabs flex-nowrap overflow-x-auto" id="menu-tabs">
-        <li class="nav-item flex-shrink-0">
-            <a class="nav-link active" aria-current="page" href="index.html">Dashboard</a>
-        </li>
-        <li class="nav-item flex-shrink-0">
-            <a class="nav-link" href="doctor-appointments.html">Appointments</a>
-        </li>
-        <li class="nav-item flex-shrink-0">
-            <a class="nav-link" href="doctor-staff-list.html">Staff List</a>
-        </li>
-        <li class="nav-item flex-shrink-0">
-            <a class="nav-link" href="doctor-list.html">Doctors</a>
-        </li>
-        <li class="nav-item flex-shrink-0">
-            <a class="nav-link" href="doctor-patients.html">Patients</a>
-        </li>
-        <li class="nav-item flex-shrink-0">
-            <a class="nav-link" href="doctor-department.html">Department</a>
-        </li>
-    </ul>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngIf="currentTemplate && templateContext">
+        <app-template-loader [template]="currentTemplate" [contextData]="templateContext"></app-template-loader>
+    </ng-container>
 </div>

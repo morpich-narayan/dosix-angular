@@ -1,0 +1,7 @@
+<ul class="nav nav-underline menu-tabs flex-nowrap overflow-x-auto" id="menu-tabs">
+    @for (item of topbarItem; track $index) {
+    <li class="nav-item flex-shrink-0">
+        <a class="nav-link"  [routerLink]="'/pages/' + prefixedPath + '/' + item.path" routerLinkActive="active" (click)="updateTitle(item.data.title)"> {{ item.data.title}}</a>
+    </li>
+    }
+</ul>

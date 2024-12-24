@@ -1,0 +1,79 @@
+<div class="card shadow-lg border-none m-lg-5">
+    <div class="card-body">
+        <div class="text-center mt-4">
+            <div class="mb-4 pb-2">
+                <a routerLink="/pages" class="auth-logo">
+                    <img src="assets/images/logo-dark.png" alt="" height="30" class="auth-logo-dark mx-auto">
+                    <img src="assets/images/logo-light.png" alt="" height="30" class="auth-logo-light mx-auto">
+                </a>
+            </div>
+            <h5 class="fs-3xl">Create your free account</h5>
+            <p class="text-muted">Get your free Dosix account now</p>
+        </div>
+        <div class="p-2 mt-4">
+            <div class="needs-validation">
+                <div class="mb-3">
+                    <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="useremail" placeholder="Enter email address">
+                    <div class="invalid-feedback">
+                        Please enter email
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control " id="username" placeholder="Enter username" >
+                    <div class="invalid-feedback">
+                        Please enter username
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="password-input">Password <span class="text-danger">*</span></label>
+                    <div class="position-relative auth-pass-inputgroup">
+                        <input type="password" class="form-control password-input pe-5"
+                            placeholder="Enter password" id="password-input">
+                        <button
+                            class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
+                            type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                        <div class="invalid-feedback">
+                            Please enter password
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <p class="mb-0 fs-xs text-muted fst-italic">By registering you agree to the Dosix <a
+                            href="pages-term-conditions.html"
+                            class="text-primary text-decoration-underline fst-normal fw-medium">Terms of
+                            Use</a></p>
+                </div>
+
+                <div class="mt-4">
+                    <button class="btn btn-primary w-100" routerLink="/pages">Sign Up</button>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <div class="signin-other-title position-relative">
+                        <h5 class="fs-sm mb-4 title text-muted">Create account with</h5>
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn btn-subtle-primary btn-icon "><i
+                                class="ri-facebook-fill fs-lg"></i></button>
+                        <button type="button" class="btn btn-subtle-danger btn-icon "><i
+                                class="ri-google-fill fs-lg"></i></button>
+                        <button type="button" class="btn btn-subtle-dark btn-icon "><i
+                                class="ri-github-fill fs-lg"></i></button>
+                        <button type="button" class="btn btn-subtle-info btn-icon "><i
+                                class="ri-twitter-fill fs-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 text-center">
+                <p class="mb-0">Already have an account ? <a routerLink="/auth/auth-signin"
+                        class="fw-semibold text-primary text-decoration-underline"> Signin </a> </p>
+            </div>
+        </div>
+    </div>
+</div>
