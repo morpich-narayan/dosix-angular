@@ -1,6 +1,7 @@
+<app-breadcrumbs [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
 <div class="row justify-content-center">
     <div class="col-xxl-9">
-        <form class="needs-validation" novalidate id="invoice_form" autocomplete="off">
+        <div class="needs-validation" [formGroup]="formGroup">
             <div class="card overflow-hidden">
                 <div class="invoice-effect-top position-absolute start-0">
                     <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 764 182" width="764"
@@ -91,8 +92,8 @@
                             <!--end col-->
                             <div class="col-lg-3 col-sm-6">
                                 <label class="form-label" for="choices-payment-status">Payment Status</label>
-                                <select class="form-control" data-choices data-choices-search-false
-                                    id="choices-payment-status" required>
+                                <select class="form-control"  formControlName="paymentStatus"
+                                    id="choices-payment-status">
                                     <option value="">Select Status</option>
                                     <option value="Paid">Paid</option>
                                     <option value="Pending">Pending</option>
@@ -226,46 +227,54 @@
                                 </tr>
                             </thead>
                             <tbody id="newlink">
-                                <ng-container >
-                                    @for (item of formArray.controls; track $index) {
-                                        <tr id="1" class="product-elem" [formGroup]="item">
-                                            <th scope="row" class="product-id">1</th>
-                                            <td class="text-start">
-                                                <div class="mb-2">
-                                                    <input type="text" class="form-control" id="productName-1"
-                                                        placeholder="Product Name">
-                                                    <div class="invalid-feedback">
-                                                        Please enter a product name
-                                                    </div>
-                                                </div>
-                                                <textarea class="form-control" id="productDetails-1" rows="2"
-                                                    placeholder="Product Details" formControlName="productDetails"></textarea>
-                                            </td>
-                                            <!-- <td>
-                                                <input type="number" class="form-control product-price" id="productRate-1"
-                                                    step="0.01" placeholder="0.00">
+                                <ng-container>
+                                    @for (item of formArray.controls; track $index;let i = $index) {
+                                    <tr id="1" class="product-elem" [formGroup]="item">
+                                        <th scope="row" class="product-id">{{i+1}}</th>
+                                        <td class="text-start">
+                                            <div class="mb-2">
+                                                <input type="text" class="form-control" id="productName-1"
+                                                    [ngClass]="{'is-invalid': item.get('productName')?.hasError('required'),'is-valid':  item.get('productName')?.valid  }"
+                                                    placeholder="Product Name" formControlName="productName">
                                                 <div class="invalid-feedback">
-                                                    Please enter a rate
+                                                    Please enter a product name
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="input-step">
-                                                    <button type="button" class='minus-btn'>–</button>
-                                                    <input type="number" class="invoice-product-quantity" id="product-qty-1"
-                                                        value="0" readonly>
-                                                    <button type="button" class='plus-btn'>+</button>
-                                                </div>
-                                            </td>
-                                            <td class="text-end">
-                                                <div>
-                                                    <input type="text" class="form-control invoice-product-line-price"
-                                                        id="productPrice-1" placeholder="$0.00" readonly>
-                                                </div>
-                                            </td>
-                                            <td class="product-removal">
-                                                <a href="javascript:void(0)" class="btn btn-danger">Delete</a>
-                                            </td> -->
-                                        </tr>
+                                            </div>
+                                            <textarea class="form-control" id="productDetails-1" rows="2"
+                                                placeholder="Product Details" formControlName="productDetails"
+                                                [ngClass]="{'is-invalid': item.get('productDetails')?.hasError('required'),'is-valid':  item.get('productDetails')?.valid}"></textarea>
+                                            <div class="invalid-feedback">
+                                                Please enter a product name
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control product-price" id="productRate-1"
+                                                step="0.01" placeholder="0.00" formControlName="rate" (keyup)="onRateChange(i)"
+                                                [ngClass]="{'is-invalid': item.get('rate')?.hasError('required')}">
+                                            <div class="invalid-feedback">
+                                                Please enter a rate
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-step">
+                                                <button type="button" class='minus-btn' (click)="decrement(i)" [disabled]="item.get('qty')?.value === 0">–</button>
+                                                <input type="number" class="invoice-product-quantity" id="product-qty-1"
+                                                    value="0" formControlName="qty"
+                                                    [ngClass]="{'is-invalid': item.get('qty')?.hasError('required')}" (keyup)="onQtyChange(i)">
+                                                <button type="button" class='plus-btn' (click)="increment(i)">+</button>
+                                            </div>
+                                        </td>
+                                        <td class="text-end">
+                                            <div>
+                                                <input type="text" class="form-control invoice-product-line-price"
+                                                    id="productPrice-1" placeholder="$0.00" formControlName="amount"
+                                                    [ngClass]="{'is-invalid': item.get('amount')?.hasError('required') }">
+                                            </div>
+                                        </td>
+                                        <td class="product-removal" (click)="deleteProduct(i)">
+                                            <a href="javascript:void(0)" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
                                     }
                                 </ng-container>
                             </tbody>
@@ -277,7 +286,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="5">
-                                        <a href="javascript:new_link()" id="add-item"
+                                        <a (click)="addProduct()" id="add-item"
                                             class="btn btn-subtle-secondary fw-medium"><i
                                                 class="ri-add-fill me-1 align-bottom"></i> Add Item</a>
                                     </td>
@@ -291,14 +300,14 @@
                                                     <th scope="row">Sub Total</th>
                                                     <td style="width:150px;">
                                                         <input type="text" class="form-control" id="cart-subtotal"
-                                                            placeholder="$0.00" readonly>
+                                                            placeholder="$0.00" [value]="subTotal.toFixed(2)">
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">Estimated Tax (18%)</th>
                                                     <td>
                                                         <input type="text" class="form-control" id="cart-tax"
-                                                            placeholder="$0.00" readonly>
+                                                            placeholder="$0.00" [value]="estimated.toFixed(2)">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -306,21 +315,21 @@
                                                     </th>
                                                     <td>
                                                         <input type="text" class="form-control" id="cart-discount"
-                                                            placeholder="$0.00" readonly>
+                                                            placeholder="$0.00" [value]="discount.toFixed(2)">
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">Shipping Charge</th>
                                                     <td>
                                                         <input type="text" class="form-control" id="cart-shipping"
-                                                            placeholder="$0.00" readonly>
+                                                            placeholder="$0.00" [value]="shippingCharge.toFixed(2)">
                                                     </td>
                                                 </tr>
                                                 <tr class="border-top border-top-dashed">
                                                     <th scope="row">Total Amount</th>
                                                     <td>
                                                         <input type="text" class="form-control" id="cart-total"
-                                                            placeholder="$0.00" readonly>
+                                                            placeholder="$0.00" [value]="totalAmount.toFixed(2)">
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -393,14 +402,14 @@
                 </div>
             </div>
             <div class="hstack gap-2 flex-wrap justify-content-end d-print-none my-4">
-                <button type="submit" class="btn btn-success"><i class="ri-printer-line align-bottom me-1"></i>
+                <button (click)="save()" class="btn btn-success"><i class="ri-printer-line align-bottom me-1"></i>
                     Save</button>
                 <a href="javascript:void(0);" class="btn btn-primary"><i
                         class="ri-download-2-line align-bottom me-1"></i> Download Invoice</a>
                 <a href="javascript:void(0);" class="btn btn-danger"><i
                         class="ri-send-plane-fill align-bottom me-1"></i> Send Invoice</a>
             </div>
-        </form>
+        </div>
     </div>
     <!--end col-->
 </div>
