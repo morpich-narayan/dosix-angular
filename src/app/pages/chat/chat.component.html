@@ -23,11 +23,11 @@
         </ul>
 
         <div class="mt-auto text-center d-none d-lg-block">
-            <div container="body" class="dropdown">
-                <button dropdownToggle class="btn btn-secondary btn-icon" type="button">
+            <div container="body" class="dropdown" ngbDropdown>
+                <button ngbDropdownToggle class="btn btn-secondary btn-icon" type="button">
                     <i class="bi bi-gear"></i>
                 </button>
-                <ul *bsDropdownMenu class="dropdown-menu">
+                <ul ngbDropdownMenu class="dropdown-menu">
                     <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
                     <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
                     <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
@@ -178,10 +178,10 @@
                                                     </p>
                                                 </div>
                                                 <div class="flex-shrink-0">
-                                                    <div dropdown container="body" class="dropdown">
-                                                        <a dropdownToggle href="javascript:void(0);" class="text-muted">
+                                                    <div ngbDropdown container="body" class="dropdown">
+                                                        <a ngbDropdownToggle href="javascript:void(0);" class="text-muted">
                                                             <i class="bi bi-three-dots-vertical"></i> </a>
-                                                        <div *bsDropdownMenu class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="javascript:void(0);"><i class="bi bi-pencil text-muted me-2 align-bottom"></i>Edit</a>
+                                                        <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="javascript:void(0);"><i class="bi bi-pencil text-muted me-2 align-bottom"></i>Edit</a>
                                                             <a class="dropdown-item" href="javascript:void(0);"><i class="bi bi-slash-circle text-muted me-2 align-bottom"></i>Block</a>
                                                             <a class="dropdown-item" href="javascript:void(0);"><i class="bi bi-trash3 text-muted me-2 align-bottom"></i>Remove</a>
                                                         </div>
@@ -269,11 +269,11 @@
                                     </div>
 
                                     <div class="flex-shrink-0 ms-3">
-                                        <div dropdown [container]="'body'" [dropup]="$index > bookmarkData.length - 4" class="dropdown">
-                                            <a dropdownToggle class="fs-md text-muted px-1" href="javascript:void(0);">
+                                        <div ngbDropdown class="dropdown">
+                                            <a ngbDropdownToggle class="fs-md text-muted px-1" href="javascript:void(0);">
                                                 <i class="bi bi-three-dots"></i>
                                             </a>
-                                            <div *bsDropdownMenu class="dropdown-menu dropdown-menu-end">
+                                            <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                                                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Open <i class="bi bi-file-earmark ms-2 text-muted"></i></a>
                                                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Edit <i class="bi bi-pencil ms-2 text-muted"></i></a>
                                                 <div class="dropdown-divider"></div>
@@ -316,11 +316,11 @@
                                                 <i class="bi bi-download"></i>
                                             </a>
                                         </div>
-                                        <div dropdown [container]="'body'" class="dropdown">
-                                            <a dropdownToggle class="text-muted px-1" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <div ngbDropdown class="dropdown">
+                                            <a ngbDropdownToggle class="text-muted px-1" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="bi bi-three-dots"></i>
                                             </a>
-                                            <div *bsDropdownMenu class="dropdown-menu dropdown-menu-end">
+                                            <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                                                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Share <i class="bi bi-share ms-2 text-muted"></i></a>
                                                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Bookmark <i class="bi bi-bookmarks text-muted ms-2"></i></a>
                                                 <div class="dropdown-divider"></div>
@@ -458,11 +458,11 @@
                                 <div class="col-sm-8 col-auto">
                                     <ul class="list-inline user-chat-nav text-end mb-0">
                                         <li class="list-inline-item m-0">
-                                            <div dropdown [insideClick]="true" class="dropdown">
-                                                <button dropdownToggle class="btn btn-ghost-secondary btn-icon" type="button">
+                                            <div ngbDropdown class="dropdown">
+                                                <button ngbDropdownToggle class="btn btn-ghost-secondary btn-icon" type="button">
                                                     <i class="bi bi-search"></i>
                                                 </button>
-                                                <div *bsDropdownMenu class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                                                <div ngbDropdownMenu class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
                                                     <div class="p-2">
                                                         <div class="search-box">
                                                             <input type="text" class="form-control bg-light border-light" placeholder="Search here..." (keyup)="MessageSearch()" id="searchMessage">
@@ -486,11 +486,11 @@
                                         </li>
 
                                         <li class="list-inline-item m-0">
-                                            <div dropdown class="dropdown">
-                                                <button dropdownToggle class="btn btn-ghost-secondary fs-lg btn-icon" type="button">
+                                            <div ngbDropdown class="dropdown">
+                                                <button ngbDropdownToggle class="btn btn-ghost-secondary fs-lg btn-icon" type="button">
                                                     <i class="bi bi-three-dots-vertical"></i>
                                                 </button>
-                                                <div *bsDropdownMenu class="dropdown-menu dropdown-menu-end">
+                                                <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                                                     <a class="dropdown-item d-block d-lg-none user-profile-show" href="javascript:void(0);"><i class="ri-user-2-fill align-bottom text-muted me-2"></i>
                                                         View Profile</a>
                                                     <a class="dropdown-item" href="javascript:void(0);"><i class="ri-inbox-archive-line align-bottom text-muted me-2"></i>
@@ -527,9 +527,9 @@
                                                             <div> <a class="popup-img d-inline-block" href="javascript:void(0);"> <img src="{{images}}" alt="" class="rounded border"> </a> </div>
                                                             <div class="message-img-link">
                                                                 <ul class="list-inline mb-0">
-                                                                    <li dropdown [dropup]="true" class="list-inline-item dropdown">
-                                                                        <a dropdownToggle class="dropdown-toggle" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="bi bi-three-dots"></i> </a>
-                                                                        <div *bsDropdownMenu class="dropdown-menu">
+                                                                    <li ngbDropdown class="list-inline-item dropdown">
+                                                                        <a ngbDropdownToggle class="dropdown-toggle" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="bi bi-three-dots"></i> </a>
+                                                                        <div ngbDropdownMenu class="dropdown-menu">
                                                                             <a class="dropdown-item" href="javascript:void(0);" download="">
                                                                                 <i class="ri-download-2-line me-2 text-muted align-bottom"></i>Download
                                                                             </a>
@@ -569,11 +569,11 @@
                                                     <p class="mb-0 ctext-content">{{data.message}}</p>
 
                                                 </div>
-                                                <div [dropup]="$index == messageData.length - 1?true:false" class="dropdown align-self-start message-box-drop" dropdown>
-                                                    <a class="dropdown-toggle" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" dropdownToggle>
+                                                <div ngbDropdown class="dropdown align-self-start message-box-drop" dropdown>
+                                                    <a class="dropdown-toggle" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
                                                         <i class="ri-more-2-fill"></i>
                                                     </a>
-                                                    <div class="dropdown-menu" *bsDropdownMenu>
+                                                    <div class="dropdown-menu" ngbDropdownMenu>
                                                         <a class="dropdown-item reply-message" href="javascript:void(0);" (click)="replyMessage($event,data.isSender)"><i class="ri-reply-line me-2 text-muted align-bottom float-start"></i>Reply</a>
                                                         <a class="dropdown-item" href="javascript:void(0);"><i class="ri-share-line me-2 text-muted align-bottom float-start"></i>Forward</a>
                                                         <a class="dropdown-item copy-message" href="javascript:void(0);" (click)="copyMessage($event)"><i class="ri-file-copy-line me-2 text-muted align-bottom float-start"></i>Copy</a>
@@ -623,11 +623,11 @@
                                 <div class="col-sm-8 col-auto">
                                     <ul class="list-inline user-chat-nav text-end mb-0">
                                         <li class="list-inline-item m-0">
-                                            <div dropdown class="dropdown">
-                                                <button dropdownToggle class="btn btn-ghost-secondary btn-icon" type="button">
+                                            <div ngbDropdown class="dropdown">
+                                                <button ngbDropdownToggle class="btn btn-ghost-secondary btn-icon" type="button">
                                                     <i class="bi bi-search"></i>
                                                 </button>
-                                                <div *bsDropdownMenu class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                                                <div ngbDropdownMenu class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
                                                     <div class="p-2">
                                                         <div class="search-box">
                                                             <input type="text" class="form-control bg-light border-light" placeholder="Search here..." onkeyup="searchMessages()" id="searchMessage">
@@ -645,11 +645,11 @@
                                         </li>
 
                                         <li class="list-inline-item m-0">
-                                            <div dropdown class="dropdown">
-                                                <button dropdownToggle class="btn btn-ghost-secondary fs-lg btn-icon" type="button">
+                                            <div ngbDropdown class="dropdown">
+                                                <button ngbDropdownToggle class="btn btn-ghost-secondary fs-lg btn-icon" type="button">
                                                     <i class="bi bi-three-dots-vertical"></i>
                                                 </button>
-                                                <div *bsDropdownMenu class="dropdown-menu dropdown-menu-end">
+                                                <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                                                     <a class="dropdown-item d-block d-lg-none user-profile-show" href="javascript:void(0);"><i class="ri-user-2-fill align-bottom text-muted me-2"></i>
                                                         View Profile</a>
                                                     <a class="dropdown-item" href="javascript:void(0);"><i class="ri-inbox-archive-line align-bottom text-muted me-2"></i>
@@ -691,7 +691,7 @@
                                                 <i class="bx bx-smile align-middle"></i>
                                             </button>
                                             @if (showEmojiPicker) {
-                                            <emoji-mart class="emoji-mart" (emojiSelect)="addEmoji($event)" title="Pick your emoji…"></emoji-mart>
+                                            <!-- <emoji-mart class="emoji-mart" (emojiSelect)="addEmoji($event)" title="Pick your emoji…"></emoji-mart> -->
                                             }
                                         </div>
                                     </div>
@@ -742,11 +742,9 @@
         </div>
     </div>
 </div>
-<!-- end chat-wrapper -->
 
 
-<div class="custom-offcanvas chat-detail">
-    <!--end offcanvas-header-->
+<!-- <div class="custom-offcanvas chat-detail">
     <div class="offcanvas-body profile-offcanvas p-0">
         <div class="p-1 pt-0">
             <div class="team-settings">
@@ -759,11 +757,11 @@
                     <div class="col-auto">
                         <div class="user-chat-nav d-flex">
 
-                            <div dropdown class="dropdown">
-                                <a dropdownToggle class="btn nav-btn" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div ngbDropdown class="dropdown">
+                                <a ngbDropdownToggle class="btn nav-btn" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="ri-more-2-fill"></i>
                                 </a>
-                                <ul *bsDropdownMenu class="dropdown-menu dropdown-menu-end">
+                                <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                                     <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-inbox-archive-line align-bottom text-muted me-2"></i>Archive</a>
                                     </li>
                                     <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-mic-off-line align-bottom text-muted me-2"></i>Muted</a>
@@ -777,7 +775,6 @@
                     </div>
                 </div>
             </div>
-            <!--end col-->
         </div>
         <div class="p-3 text-center">
             <img src="{{isProfile}}" alt="" class="avatar-lg img-thumbnail rounded-circle mx-auto profile-img">
@@ -807,14 +804,14 @@
                     </span>
                 </button>
 
-                <div dropdown class="dropdown">
-                    <button dropdownToggle class="btn avatar-xs p-0" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div ngbDropdown class="dropdown">
+                    <button ngbDropdownToggle class="btn avatar-xs p-0" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="avatar-title bg-light text-body rounded">
                             <i class="ri-more-fill"></i>
                         </span>
                     </button>
 
-                    <ul *bsDropdownMenu class="dropdown-menu dropdown-menu-end">
+                    <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-inbox-archive-line align-bottom text-muted me-2"></i>Archive</a></li>
                         <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-mic-off-line align-bottom text-muted me-2"></i>Muted</a></li>
                         <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-5-line align-bottom text-muted me-2"></i>Delete</a></li>
@@ -862,11 +859,11 @@
                                         <i class="bi bi-download"></i>
                                     </a>
                                 </div>
-                                <div dropdown class="dropdown">
-                                    <a dropdownToggle class="text-muted px-1" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div ngbDropdown class="dropdown">
+                                    <a ngbDropdownToggle class="text-muted px-1" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="bi bi-three-dots"></i>
                                     </a>
-                                    <div *bsDropdownMenu class="dropdown-menu dropdown-menu-end">
+                                    <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Share <i class="bi bi-share ms-2 text-muted"></i></a>
                                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Bookmark <i class="bi bi-bookmarks text-muted ms-2"></i></a>
                                         <div class="dropdown-divider"></div>
@@ -898,11 +895,11 @@
                                         <i class="bi bi-download"></i>
                                     </a>
                                 </div>
-                                <div dropdown class="dropdown">
-                                    <a dropdownToggle class="text-muted px-1" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div ngbDropdown class="dropdown">
+                                    <a ngbDropdownToggle class="text-muted px-1" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="bi bi-three-dots"></i>
                                     </a>
-                                    <div *bsDropdownMenu class="dropdown-menu dropdown-menu-end">
+                                    <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Share <i class="bi bi-share ms-2 text-muted"></i></a>
                                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Bookmark <i class="bi bi-bookmarks text-muted ms-2"></i></a>
                                         <div class="dropdown-divider"></div>
@@ -933,11 +930,11 @@
                                         <i class="bi bi-download"></i>
                                     </a>
                                 </div>
-                                <div dropdown class="dropdown">
-                                    <a dropdownToggle class="text-muted px-1" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div ngbDropdown class="dropdown">
+                                    <a ngbDropdownToggle class="text-muted px-1" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="bi bi-three-dots"></i>
                                     </a>
-                                    <div *bsDropdownMenu class="dropdown-menu dropdown-menu-end">
+                                    <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Share <i class="bi bi-share ms-2 text-muted"></i></a>
                                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Bookmark <i class="bi bi-bookmarks text-muted ms-2"></i></a>
                                         <div class="dropdown-divider"></div>
@@ -968,11 +965,11 @@
                                         <i class="bi bi-download"></i>
                                     </a>
                                 </div>
-                                <div dropdown class="dropdown">
-                                    <a dropdownToggle class="text-muted px-1" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div ngbDropdown class="dropdown">
+                                    <a ngbDropdownToggle class="text-muted px-1" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="bi bi-three-dots"></i>
                                     </a>
-                                    <div *bsDropdownMenu class="dropdown-menu dropdown-menu-end">
+                                    <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Share <i class="bi bi-share ms-2 text-muted"></i></a>
                                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0);">Bookmark <i class="bi bi-bookmarks text-muted ms-2"></i></a>
                                         <div class="dropdown-divider"></div>
@@ -990,7 +987,5 @@
             </div>
         </div>
     </div>
-    <!--end offcanvas-body-->
 </div>
-<div class="offcanvas-backdrop fade backdrop1" id="backdrop" (click)="closeoffcanvas()"></div>
-<!--end offcanvas-->
+<div class="offcanvas-backdrop fade backdrop1" id="backdrop" (click)="closeoffcanvas()"></div> -->

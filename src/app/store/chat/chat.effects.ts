@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { inject, Inject, Injectable } from "@angular/core";
 import { of } from 'rxjs';
 import { catchError, map, mergeMap, tap } from 'rxjs/operators';
 import { Actions, createEffect, ofType } from "@ngrx/effects";
@@ -9,6 +9,8 @@ import { CrudService } from "../../../core/service/crud.service";
 @Injectable()
 
 export class ChatEffects {
+    actions$ = inject(Actions);
+
     fetchData$ = createEffect(() =>
         this.actions$.pipe(
             ofType(fetchmessagesData),
@@ -121,7 +123,7 @@ export class ChatEffects {
 );
 
     constructor(
-        private actions$: Actions,
         private CrudService: CrudService
-    ) { }
+    ) { 
+    }
 }

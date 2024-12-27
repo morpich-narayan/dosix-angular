@@ -1,0 +1,92 @@
+import { Injectable } from '@angular/core';
+import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
+import { attachementsData, bookmarkData, callsData, ChannelsData, chatContactData, chatData, messages } from '../data/chat';
+
+
+@Injectable()
+export class fakebackendInterceptor implements HttpInterceptor {
+
+    constructor() { }
+
+    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+        // tslint:disable-next-line: max-line-length
+        const users: any[] = JSON.parse(localStorage.getItem('users')!) || [{ username: 'admin', email: 'admin@themesbrand.com', password: '123456' }];
+
+        // wrap in delayed observable to simulate server api call
+        return of(null).pipe(mergeMap(() => {
+
+            // get chatmessage list
+            if (request.url.endsWith('/app/message') && request.method === 'GET') {
+                if (messages) {
+                    return of(new HttpResponse({ status: 200, body: messages }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+
+            // get chatmessage list
+            if (request.url.endsWith('/app/chatData') && request.method === 'GET') {
+                if (chatData) {
+                    return of(new HttpResponse({ status: 200, body: chatData }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+
+            // get chatmessage list
+            if (request.url.endsWith('/app/channnellist') && request.method === 'GET') {
+                if (ChannelsData) {
+                    return of(new HttpResponse({ status: 200, body: ChannelsData }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+
+            // get contact list
+            if (request.url.endsWith('/app/chatContactData') && request.method === 'GET') {
+                if (chatContactData) {
+                    return of(new HttpResponse({ status: 200, body: chatContactData }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+
+            // get contact list
+            if (request.url.endsWith('/app/attachementsData') && request.method === 'GET') {
+                if (attachementsData) {
+                    return of(new HttpResponse({ status: 200, body: attachementsData }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+
+            // get contact list
+            if (request.url.endsWith('/app/callsData') && request.method === 'GET') {
+                if (callsData) {
+                    return of(new HttpResponse({ status: 200, body: callsData }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+
+            // get contact list
+            if (request.url.endsWith('/app/bookmarkData') && request.method === 'GET') {
+                if (bookmarkData) {
+                    return of(new HttpResponse({ status: 200, body: bookmarkData }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+            return next.handle(request);
+
+        }))
+
+            // tslint:disable-next-line: max-line-length
+            .pipe(materialize())
+            .pipe(delay(500))
+            .pipe(dematerialize());
+    }
+}

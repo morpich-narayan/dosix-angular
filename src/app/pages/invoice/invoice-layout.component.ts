@@ -27,6 +27,7 @@ export class InvoiceLayoutsComponent implements OnInit, AfterViewInit {
   
   ngOnInit() {
     this.getChildRoutes();
+
   }
 
   ngAfterViewInit() {
@@ -46,5 +47,9 @@ export class InvoiceLayoutsComponent implements OnInit, AfterViewInit {
         .filter(route => route.data)
         .map(({ component, ...rest }) => rest) as TopbarItem[];
     }
+  }
+
+  ngOnDestroy(){
+    this.templateRegistry.destroyAll();
   }
 }

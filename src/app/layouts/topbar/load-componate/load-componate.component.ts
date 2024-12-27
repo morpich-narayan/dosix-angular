@@ -10,5 +10,4 @@ import { Component, Input, TemplateRef } from '@angular/core';
 })
 export class LoadComponateComponent {
   @Input() template!: TemplateRef<any>;
-  @Input() contextData: any;
 }

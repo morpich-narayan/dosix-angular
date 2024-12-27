@@ -8,6 +8,20 @@ import { DoctorDepartmentComponent } from '../pages/Hospital/doctor-department/d
 import { InvoiceCreateComponent } from '../pages/invoice/invoice-create/invoice-create.component';
 import { InvoiceListComponent } from '../pages/invoice/invoice-list/invoice-list.component';
 import { InvoiceOverviewComponent } from '../pages/invoice/invoice-overview/invoice-overview.component';
+import { ChatComponent } from '../pages/chat/chat.component';
+import { CalendarComponent } from '../pages/calendar/calendar.component';
+import { EmailComponent } from '../pages/email/email.component';
+import { SweetalertComponent } from '../pages/advanceui/sweetalert/sweetalert.component';
+import { HighlightComponent } from '../pages/advanceui/highlight/highlight.component';
+import { RatingComponent } from '../pages/advanceui/rating/rating.component';
+import { ScrollbarComponent } from '../pages/advanceui/scrollbar/scrollbar.component';
+import { AdvanceUiSwiperComponent } from '../pages/advanceui/advance-ui-swiper/advance-ui-swiper.component';
+import { ScrollspyComponent } from '../pages/advanceui/scrollspy/scrollspy.component';
+import { UiAccordionsComponent } from '../pages/bootstrap/ui-accordions/ui-accordions.component';
+import { UiCarouselComponent } from '../pages/bootstrap/ui-carousel/ui-carousel.component';
+import { UiDropdownsComponent } from '../pages/bootstrap/ui-dropdowns/ui-dropdowns.component';
+import { UiTabsComponent } from '../pages/bootstrap/ui-tabs/ui-tabs.component';
+import { UiAlertsComponent } from '../pages/bootstrap/ui-alerts/ui-alerts.component';
 
 export const PAGE_ROUTES: Routes = [
   // Hospital
@@ -35,5 +49,28 @@ export const PAGE_ROUTES: Routes = [
       { path: 'apps-invoices-overview', component: InvoiceOverviewComponent, data: { title: 'Invoice Overview' } },
       { path: 'apps-invoices-create', component: InvoiceCreateComponent, data: { title: 'Create Invoice' } },
     ]
-  }
+  },
+  // Chat
+  { path: 'chat', component: ChatComponent },
+  // Calendar
+  { path: 'apps-calendar', component: CalendarComponent },
+  // Email
+  { path: 'apps-email', component: EmailComponent },
+  // Advance UI
+  { path: 'sweetalert', component: SweetalertComponent },
+  { path: 'scrollspy', component: ScrollspyComponent },
+  { path: 'highlight', component: HighlightComponent },
+  { path: 'ratings', component: RatingComponent },
+  { path: 'scrollbar', component: ScrollbarComponent },
+  { path: 'swiper', component: AdvanceUiSwiperComponent },
+
+  // Bootstrap ui
+  { path: 'ui-accordion', component: UiAccordionsComponent },
+  { path: 'ui-carousel', component: UiCarouselComponent },
+  { path: 'ui-dropdowns', component: UiDropdownsComponent },
+  { path: 'ui-tabs', component: UiTabsComponent },
+  { path: 'ui-alerts', component: UiAlertsComponent },
+
+
+
 ]

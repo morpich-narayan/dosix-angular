@@ -18,7 +18,9 @@ export class LoadTopbarContantComponent {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.pathFromRoot[2].url.subscribe(segments => {
       const path = segments.map(segment => segment.path).join('/');
-      this.prefixedPath =path
+      this.prefixedPath = path;
+
+      console.log(this.prefixedPath);
     }
     );
   }

@@ -715,7 +715,7 @@
             </div>
         </div>
     </div>
-    <ng-container *ngIf="currentTemplate && templateContext">
-        <app-template-loader [template]="currentTemplate" [contextData]="templateContext"></app-template-loader>
+    <ng-container *ngIf="currentTemplate">
+        <app-template-loader [template]="currentTemplate"></app-template-loader>
     </ng-container>
 </div>

@@ -1,17 +1,20 @@
 import { Component, ViewChild } from '@angular/core';
-import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, DatePipe } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { cloneDeep } from 'lodash';
 import { fetchattachmentData, fetchbookmarkData, fetchcallsData, fetchchannnelData, fetchchatData, fetchcontactData, fetchmessagesData } from '../../store/chat/chat.action';
 import { selectattachmentData, selectbookmarkData, selectcallData, selectcallslistData, selectchannelData, selectcontactData, selectData } from '../../store/chat/chat.selector';
-
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { SimplebarAngularModule } from 'simplebar-angular';
+import { TitleService } from '../../../core/service/title.service';
 @Component({
     selector: 'app-chat',
     templateUrl: './chat.component.html',
     standalone:true,
-    imports:[CommonModule],
-    styleUrls: ['./chat.component.scss']
+    imports:[CommonModule,NgbDropdownModule,SimplebarAngularModule,ReactiveFormsModule],
+    styleUrls: ['./chat.component.scss'],
+    providers:[DatePipe]
 })
 export class ChatComponent {
     channeldata: any
@@ -43,10 +46,10 @@ export class ChatComponent {
     callsData: any;
     bookmarkData: any;
 
-    constructor(public formBuilder: UntypedFormBuilder, private datePipe: DatePipe, public store: Store) { }
+    constructor(public formBuilder: UntypedFormBuilder, private datePipe: DatePipe, public store: Store,public ts: TitleService ) { }
 
     ngOnInit(): void {
-        // Chat Data Get Function
+        this.ts.setItem('chat');
         this._fetchData();
 
         // Validation

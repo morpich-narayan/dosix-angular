@@ -14,7 +14,6 @@ import { TitleService } from '../../../core/service/title.service';
 })
 export class TopbarComponent {
   currentTemplate!: TemplateRef<any> | null;
-  templateContext: any = null;
   currentTitle!: string;
 
   constructor(private templateRegistry: TemplateRegistryService, private titleService: TitleService) {
@@ -34,8 +33,9 @@ export class TopbarComponent {
   loadTemplate(key: string = 'template'): void {
     const template = this.templateRegistry.getTemplate(key);
     if (template) {
-      this.currentTemplate = template;
-      this.templateContext = { data: `Content for ${key}` };
+      setTimeout(() => {
+        this.currentTemplate = template;
+      }, 0);
     }
   }
 }

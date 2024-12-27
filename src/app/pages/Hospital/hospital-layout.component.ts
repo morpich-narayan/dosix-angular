@@ -30,6 +30,7 @@ export class HospitalLayoutsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    console.log(this.dashboardTemplate);
     this.templateRegistry.registerTemplate(this.dashboardTemplate);
   }
 
@@ -46,5 +47,9 @@ export class HospitalLayoutsComponent implements OnInit, AfterViewInit {
         .filter(route => route.data)
         .map(({ component, ...rest }) => rest) as TopbarItem[];
     }
+  }
+
+  ngOnDestroy(){
+    this.templateRegistry.destroyAll();
   }
 }
