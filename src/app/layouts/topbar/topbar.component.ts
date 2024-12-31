@@ -18,15 +18,15 @@ import { Subject } from 'rxjs';
 export class TopbarComponent {
   currentTemplate!: TemplateRef<any> | null;
   currentTitle!: string;
-  private destroy$ = new Subject<void>(); // Observable to notify unsubscription
 
 
   constructor(private templateRegistry: TemplateRegistryService, private titleService: TitleService, private router: Router) {
-    this.titleService.currentTitle.pipe(takeUntil(this.destroy$)).subscribe(data => {
-      if (data) {
-        this.currentTitle = data
+    this.titleService.getItem().subscribe(title => {
+      if (title) {
+        this.currentTitle = ''
+        this.currentTitle = title
       }
-    })
+    });
 
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
@@ -52,8 +52,4 @@ export class TopbarComponent {
     }
   }
 
-  ngOnDestroy(): void {
-    this.destroy$.next(); // Emit a value to complete all subscriptions
-    this.destroy$.complete(); // Complete the `destroy$` observable
-  }
 }

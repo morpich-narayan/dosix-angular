@@ -1,1 +1,132 @@
-<span>dsads324234</span>
+<app-breadcrumbs [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-xxl-3">
+                        <div class="search-box">
+                            <input type="text" class="form-control search" placeholder="Search patients name, email, contact name date etc...">
+                            <i class="ri-search-line search-icon"></i>
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-xxl-3">
+                        <input type="text" class="form-control flatpickr-input active" data-provider="flatpickr" data-date-format="d M, Y" data-range-date="true" readonly="readonly" placeholder="Select date">
+                    </div><!--end col-->
+                    <div class="col-xxl-auto col-sm-6 ms-xxl-auto d-flex gap-2 flex-wrap">
+                        <button type="button" class="btn btn-primary"><i class="bi bi-plus-circle align-baseline me-1"></i> Add Appointment</button>
+                        <button type="button" class="btn btn-secondary w-md"><i class="bi bi-funnel align-baseline me-1"></i> Filters</button>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div>
+        </div>
+    </div><!--end col-->
+</div><!--end row-->
+<div class="row">
+    <div class="col-lg-12">
+        <div>
+            <div>
+                <div class="table-responsive">
+                    <table class="table table-custom align-middle table-borderless table-nowrap">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="option" id="checkAll">
+                                        <label class="form-check-label" for="checkAll"></label>
+                                    </div>
+                                </th>
+                                <th class="sort cursor-pointer" data-sort="patientName">Patient Name</th>
+                                <th class="sort cursor-pointer" data-sort="dateTime">Date & Time</th>
+                                <th class="sort cursor-pointer" data-sort="email">Email</th>
+                                <th class="sort cursor-pointer" data-sort="number">Contact Number</th>
+                                <th class="sort cursor-pointer" data-sort="diseases">Diseases</th>
+                                <th class="sort cursor-pointer" data-sort="status">Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list form-check-all">
+                            <tr *ngFor="let patient of patients">
+                                <td>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="chk_child" />
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td class="patientName">
+                                  <div class="d-flex align-items-center">
+                                    <div class="avatar-xs me-2">
+                                      <ng-container *ngIf="patient.avatar; else noAvatar">
+                                        <img [src]="patient.avatar" class="img-fluid d-block rounded" />
+                                      </ng-container>
+                                      <ng-template #noAvatar>
+                                        <div class="avatar-title bg-info-subtle text-info rounded">
+                                          {{ patient.avatarText }}
+                                        </div>
+                                      </ng-template>
+                                    </div>
+                                    <div>
+                                      <h6 class="mb-0">
+                                        <a data-bs-toggle="modal" class="text-reset">{{ patient.name }}</a>
+                                      </h6>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td class="dateTime">
+                                  {{ patient.dateTime }} <span class="badge ms-1 bg-light text-muted align-middle">{{ patient.time }}</span>
+                                </td>
+                                <td class="email">{{ patient.email }}</td>
+                                <td class="number">{{ patient.number }}</td>
+                                <td class="diseases">{{ patient.diseases }}</td>
+                                <td>
+                                  <span [class]="'badge ' + patient.statusClass">{{ patient.status }}</span>
+                                </td>
+                                <td>
+                                  <div class="dropdown position-static" ngbDropdown>
+                                    <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bi bi-three-dots-vertical" ngbDropdownToggle></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                                      <li><a class="dropdown-item" data-bs-toggle="modal"><i class="ph-eye align-middle me-1"></i> View</a></li>
+                                      <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                      <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                    </ul>
+                                  </div>
+                                </td>
+                              </tr>
+                        </tbody>
+                    </table>
+                </div><!--end table-responsive-->
+
+                <div class="noresult" style="display: none">
+                    <div class="text-center py-4">
+                        <div class="avatar-md mx-auto mb-4">
+                            <div class="avatar-title bg-light text-primary rounded-circle fs-4xl">
+                                <i class="bi bi-search"></i>
+                            </div>
+                        </div>
+                        <h5 class="mt-2">Sorry! No Result Found</h5>
+                        <p class="text-muted mb-0">We've searched more than 100+ appointment We did not find any
+                            appointment for you search.</p>
+                    </div>
+                </div>
+                <!-- end noresult -->
+
+                <div class="row mb-4 align-items-center" id="pagination-element">
+                    <div class="col-sm">
+                        <div class="text-muted text-center text-sm-start">
+                            Showing <span class="fw-semibold">8</span> of <span class="fw-semibold">20</span> Results
+                        </div>
+                    </div>
+
+                    <div class="col-sm-auto mt-3 mt-sm-0">
+                        <ul
+                            class="pagination pagination-separated listjs-pagination mb-0 justify-content-center justify-content-md-end">
+                        </ul>
+                    </div>
+                </div>
+                <!-- end pagination-element -->
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+</div><!--end row-->

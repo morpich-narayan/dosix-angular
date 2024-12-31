@@ -161,19 +161,19 @@ export const MENU: MenuItem[] = [
             {
                 id: 40,
                 label: 't-password-reset',
-                link: '/auth/pass-reset',
+                link: '/auth/auth-pass-reset',
                 parentId: 39
             },
             {
                 id: 40,
                 label: 't-password-create',
-                link: '/auth/pass-change',
+                link: '/auth/auth-pass-change',
                 parentId: 39
             },
             {
                 id: 40,
                 label: 't-lock-screen',
-                link: '/auth/auth-lock-screen',
+                link: '/auth/auth-lockscreen',
                 parentId: 39
             },
             {
@@ -303,810 +303,460 @@ export const MENU: MenuItem[] = [
     },
     {
         id: 43,
-        label: 'MENUITEMS.APPS.LIST.SUPPORTTICKETS',
-        icon: 'ph-ticket',
+        label: 't-bootstrap-ui',
+        icon: 'bx bx-cube',
         parentId: 8,
         subItems: [
             {
                 id: 44,
-                label: 'MENUITEMS.APPS.LIST.LISTVIEW',
-                link: '/tickets/list',
+                label: 't-alerts',
+                link: '/pages/ui-alerts',
                 parentId: 43
             },
             {
-                id: 45,
-                label: 'MENUITEMS.APPS.LIST.OVERVIEW',
-                link: '/tickets/overview',
+                id: 44,
+                label: 't-badges',
+                link: '/pages/ui-badges',
                 parentId: 43
-            }
+            },
+            {
+                id: 44,
+                label: 't-buttons',
+                link: '/pages/ui-buttons',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-colors',
+                link: '/pages/ui-colors',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-carousel',
+                link: '/pages/ui-carousel',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-cards',
+                link: '/pages/ui-cards',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-images',
+                link: '/pages/ui-images',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-tabs',
+                link: '/pages/ui-tabs',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-dropdowns',
+                link: '/pages/ui-dropdowns',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-accordions',
+                link: '/pages/ui-accordions',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-modals',
+                link: '/pages/ui-modals',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-offcanvas',
+                link: '/pages/ui-offcanvas',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-placeholders',
+                link: '/pages/ui-placeholders',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-progress',
+                link: '/pages/ui-progress',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-notifications',
+                link: '/pages/ui-notifications',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-media-object',
+                link: '/pages/ui-media',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-embed-video',
+                link: '/pages/ui-embed-video',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-typography',
+                link: '/pages/ui-typography',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-lists',
+                link: '/pages/ui-lists',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-general',
+                link: '/pages/ui-general',
+                parentId: 43
+            },
+            {
+                id: 44,
+                label: 't-utilities',
+                link: '/pages/ui-utilities',
+                parentId: 43
+            },
         ]
     },
     {
         id: 46,
-        label: 'MENUITEMS.APPS.LIST.REALESTATE',
-        icon: 'ph-buildings',
+        label: 't-advance-ui',
+        icon: 'bx bx-layer',
         parentId: 8,
         subItems: [
             {
                 id: 47,
-                label: 'MENUITEMS.APPS.LIST.LISTINGGRID',
-                link: '/real-estate/grid',
+                label: 't-sweet-alerts',
+                link: '/pages/sweetalert',
                 parentId: 46
             },
             {
-                id: 48,
-                label: 'MENUITEMS.APPS.LIST.LISTINGLIST',
-                link: '/real-estate/list',
+                id: 47,
+                label: 't-scrollbar',
+                link: '/pages/scrollbar',
                 parentId: 46
             },
             {
-                id: 49,
-                label: 'MENUITEMS.APPS.LIST.LISTINGMAP',
-                link: '/real-estate/map',
+                id: 47,
+                label: 't-swiper-slider',
+                link: '/pages/swiper',
                 parentId: 46
             },
             {
-                id: 50,
-                label: 'MENUITEMS.APPS.LIST.PROPERTYOVERVIEW',
-                link: '/real-estate/property-overview',
+                id: 47,
+                label: 't-ratings',
+                link: '/pages/ratings',
                 parentId: 46
             },
             {
-                id: 51,
-                label: 'MENUITEMS.APPS.LIST.AGENT',
-                parentId: 46,
-                isCollapsed: true,
-                subItems: [
-                    {
-                        id: 52,
-                        label: 'MENUITEMS.APPS.LIST.LISTVIEW',
-                        link: '/real-estate/agent/list',
-                        parentId: 51
-                    },
-                    {
-                        id: 53,
-                        label: 'MENUITEMS.APPS.LIST.GRIDVIEW',
-                        link: '/real-estate/agent/grid',
-                        parentId: 51
-                    },
-                    {
-                        id: 54,
-                        label: 'MENUITEMS.APPS.LIST.OVERVIEW',
-                        link: '/real-estate/agent/overview',
-                        parentId: 51
-                    },
-                ]
-            },
-            {
-                id: 55,
-                label: 'MENUITEMS.APPS.LIST.AGENCIES',
-                parentId: 46,
-                isCollapsed: true,
-                subItems: [
-                    {
-                        id: 56,
-                        label: 'MENUITEMS.APPS.LIST.LISTVIEW',
-                        link: '/real-estate/agencies/list',
-                        parentId: 55
-                    },
-                    {
-                        id: 57,
-                        label: 'MENUITEMS.APPS.LIST.OVERVIEW',
-                        link: '/real-estate/agencies/overview',
-                        parentId: 55
-                    },
-                ]
-            },
-            {
-                id: 58,
-                label: 'MENUITEMS.APPS.LIST.ADDPROPERTY',
-                link: '/real-estate/add-properties',
+                id: 47,
+                label: 't-scrollSpy',
+                link: '/pages/scrollspy',
                 parentId: 46
             },
             {
-                id: 59,
-                label: 'MENUITEMS.APPS.LIST.EARNINGS',
-                link: '/real-estate/earnings',
+                id: 47,
+                label: 't-highlight',
+                link: '/pages/highlight',
                 parentId: 46
-            },
-        ]
-    },
-    {
-        id: 61,
-        label: 'MENUITEMS.AUTHENTICATION.TEXT',
-        icon: 'ph-user-circle',
-        subItems: [
-            {
-                id: 62,
-                label: 'MENUITEMS.AUTHENTICATION.LIST.SIGNIN',
-                link: '/auth/signin',
-                parentId: 61,
-            },
-            {
-                id: 63,
-                label: 'MENUITEMS.AUTHENTICATION.LIST.SIGNUP',
-                link: '/auth/signup',
-                parentId: 61,
-            },
-            {
-                id: 64,
-                label: 'MENUITEMS.AUTHENTICATION.LIST.PASSWORDRESET',
-                link: '/auth/pass-reset',
-                parentId: 61,
-            },
-            {
-                id: 65,
-                label: 'MENUITEMS.AUTHENTICATION.LIST.PASSWORDCREATE',
-                link: '/auth/pass-change',
-                parentId: 61,
-            },
-            {
-                id: 66,
-                label: 'MENUITEMS.AUTHENTICATION.LIST.LOCKSCREEN',
-                link: '/auth/lockscreen',
-                parentId: 61
-            },
-            {
-                id: 67,
-                label: 'MENUITEMS.AUTHENTICATION.LIST.LOGOUT',
-                link: '/auth/logout',
-                parentId: 61
-            },
-            {
-                id: 68,
-                label: 'MENUITEMS.AUTHENTICATION.LIST.SUCCESSMESSAGE',
-                link: '/auth/success-msg',
-                parentId: 61
-            },
-            {
-                id: 69,
-                label: 'MENUITEMS.AUTHENTICATION.LIST.TWOSTEPVERIFICATION',
-                link: '/auth/twostep',
-                parentId: 61
-            },
-            {
-                id: 70,
-                label: 'MENUITEMS.AUTHENTICATION.LIST.ERRORS',
-                parentId: 61,
-                isCollapsed: true,
-                subItems: [
-                    {
-                        id: 71,
-                        label: 'MENUITEMS.AUTHENTICATION.LIST.404ERROR',
-                        link: '/auth/errors/404',
-                        parentId: 70
-                    },
-                    {
-                        id: 72,
-                        label: 'MENUITEMS.AUTHENTICATION.LIST.500',
-                        link: '/auth/errors/500',
-                        parentId: 70
-                    },
-                    {
-                        id: 73,
-                        label: 'MENUITEMS.AUTHENTICATION.LIST.503',
-                        link: '/auth/errors/503',
-                        parentId: 70
-                    },
-                    {
-                        id: 74,
-                        label: 'MENUITEMS.AUTHENTICATION.LIST.OFFLINE',
-                        link: '/auth/errors/offline',
-                        parentId: 70
-                    },
-                ]
-            },
-        ]
-    },
-    {
-        id: 75,
-        label: 'MENUITEMS.EXTRAPAGES.TEXT',
-        icon: 'ph-address-book',
-        subItems: [
-            {
-                id: 76,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.STARTER',
-                link: '/pages/starter',
-                parentId: 75
-            },
-            {
-                id: 77,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.PROFILE',
-                link: '/pages/profile',
-                parentId: 75,
-            },
-            {
-                id: 78,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.PROFILESETTINGS',
-                link: '/pages/profile-settings',
-                parentId: 75,
-            },
-            {
-                id: 79,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.CONTACTS',
-                link: '/pages/contacts',
-                parentId: 75
-            },
-            {
-                id: 80,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.TIMELINE',
-                link: '/pages/timeline',
-                parentId: 75
-            },
-            {
-                id: 81,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.FAQS',
-                link: '/pages/faqs',
-                parentId: 75
-            },
-            {
-                id: 82,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.PRICING',
-                link: '/pages/pricing',
-                parentId: 75
-            },
-            {
-                id: 83,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.MAINTENANCE',
-                link: '/pages/maintenance',
-                parentId: 75
-            },
-            {
-                id: 84,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.COMINGSOON',
-                link: '/pages/coming-soon',
-                parentId: 75
-            },
-            {
-                id: 85,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.PRIVACYPOLICY',
-                link: '/pages/privacy-policy',
-                parentId: 75
-            },
-            {
-                id: 86,
-                label: 'MENUITEMS.EXTRAPAGES.LIST.TERMS&CONDITIONS',
-                link: '/pages/term-conditions',
-                parentId: 75
-            }
-        ]
-    },
-    {
-        id: 88,
-        label: 'MENUITEMS.BOOTSTRAPUI.TEXT',
-        icon: "ph-bandaids",
-        subItems: [
-            {
-                id: 89,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.ALERTS',
-                link: '/ui/alerts',
-                parentId: 88
-            },
-            {
-                id: 90,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.BADGES',
-                link: '/ui/badges',
-                parentId: 88
-            },
-            {
-                id: 91,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.BUTTONS',
-                link: '/ui/button',
-                parentId: 88
-            },
-            {
-                id: 92,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.COLORS',
-                link: '/ui/colors',
-                parentId: 88
-            },
-            {
-                id: 93,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.CARDS',
-                link: '/ui/cards',
-                parentId: 88
-            },
-            {
-                id: 94,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.CAROUSEL',
-                link: '/ui/carousel',
-                parentId: 88
-            },
-            {
-                id: 95,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.DROPDOWNS',
-                link: '/ui/dropdown',
-                parentId: 88
-            },
-            {
-                id: 96,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.GRID',
-                link: '/ui/grid',
-                parentId: 88
-            },
-            {
-                id: 97,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.IMAGES',
-                link: '/ui/images',
-                parentId: 88
-            },
-            {
-                id: 98,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.TABS',
-                link: '/ui/tabs',
-                parentId: 88
-            },
-            {
-                id: 99,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.ACCORDION&COLLAPSE',
-                link: '/ui/accordion',
-                parentId: 88
-            },
-            {
-                id: 100,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.MODALS',
-                link: '/ui/modal',
-                parentId: 88
-            },
-            {
-                id: 102,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.PLACEHOLDERS',
-                link: '/ui/placeholder',
-                parentId: 88
-            },
-            {
-                id: 103,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.PROGRESS',
-                link: '/ui/progress',
-                parentId: 88
-            },
-            {
-                id: 104,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.NOTIFICATIONS',
-                link: '/ui/notification',
-                parentId: 88
-            },
-            {
-                id: 105,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.MEDIAOBJECT',
-                link: '/ui/media',
-                parentId: 88
-            },
-            {
-                id: 106,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.EMBEDVIDEO',
-                link: '/ui/embed-video',
-                parentId: 88
-            },
-            {
-                id: 107,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.TYPOGRAPHY',
-                link: '/ui/typography',
-                parentId: 88
-            },
-            {
-                id: 108,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.LISTS',
-                link: '/ui/lists',
-                parentId: 88
-            },
-            {
-                id: 109,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.LINKS',
-                link: '/ui/links',
-                parentId: 88
-            },
-            {
-                id: 110,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.GENERAL',
-                link: '/ui/general',
-                parentId: 88
-            },
-            {
-                id: 111,
-                label: 'MENUITEMS.BOOTSTRAPUI.LIST.UTILITIES',
-                link: '/ui/utility',
-                parentId: 88
-            },
-        ]
-    },
-    {
-        id: 112,
-        label: 'MENUITEMS.ADVANCEUI.TEXT',
-        icon: "ph-stack-simple",
-        subItems: [
-            {
-                id: 113,
-                label: 'MENUITEMS.ADVANCEUI.LIST.SWEETALERTS',
-                link: '/advance-ui/sweetalert',
-                parentId: 112
-            },
-
-            {
-                id: 115,
-                label: 'MENUITEMS.ADVANCEUI.LIST.SCROLLBAR',
-                link: '/advance-ui/scrollbar',
-                parentId: 112
-            },
-            {
-                id: 116,
-                label: 'MENUITEMS.ADVANCEUI.LIST.SWIPERSLIDER',
-                link: '/advance-ui/swiper',
-                parentId: 112
-            },
-            {
-                id: 117,
-                label: 'MENUITEMS.ADVANCEUI.LIST.RATTINGS',
-                link: '/advance-ui/ratings',
-                parentId: 112
-            },
-            {
-                id: 118,
-                label: 'MENUITEMS.ADVANCEUI.LIST.HIGHLIGHT',
-                link: '/advance-ui/highlight',
-                parentId: 112
-            },
-            {
-                id: 119,
-                label: 'MENUITEMS.ADVANCEUI.LIST.SCROLLSPY',
-                link: '/advance-ui/scrollspy',
-                parentId: 112
-            }
-        ]
-    },
-    {
-        id: 120,
-        label: 'MENUITEMS.CUSTOMUI.TEXT',
-        badge: 'MENUITEMS.CUSTOMUI.BADGE',
-        icon: "ph-wrench",
-        subItems: [
-            {
-                id: 121,
-                label: 'MENUITEMS.CUSTOMUI.LIST.RIBBONS',
-                link: '/custom-ui/ribbons',
-                parentId: 120
-            },
-            {
-                id: 122,
-                label: 'MENUITEMS.CUSTOMUI.LIST.PROFILE',
-                link: '/custom-ui/profile',
-                parentId: 120
-            },
-            {
-                id: 123,
-                label: 'MENUITEMS.CUSTOMUI.LIST.COUNTER',
-                link: '/custom-ui/counter',
-                parentId: 120
             }
         ]
     },
     {
         id: 124,
-        label: 'MENUITEMS.WIDGETS.TEXT',
-        icon: "ph-paint-brush-broad",
-        link: '/apps/widgets'
-    },
-    {
-        id: 125,
-        label: 'MENUITEMS.FORMS.TEXT',
-        icon: 'ri-file-list-3-line',
-        subItems: [
-            {
-                id: 126,
-                label: 'MENUITEMS.FORMS.LIST.BASICELEMENTS',
-                link: '/forms/element',
-                parentId: 125
-            },
-            {
-                id: 127,
-                label: 'MENUITEMS.FORMS.LIST.FORMSELECT',
-                link: '/forms/select',
-                parentId: 125
-            },
-            {
-                id: 128,
-                label: 'MENUITEMS.FORMS.LIST.CHECKBOXS&RADIOS',
-                link: '/forms/checkboxs-radios',
-                parentId: 125
-            },
-            {
-                id: 129,
-                label: 'MENUITEMS.FORMS.LIST.PICKERS',
-                link: '/forms/pickers',
-                parentId: 125
-            },
-            {
-                id: 130,
-                label: 'MENUITEMS.FORMS.LIST.INPUTMASKS',
-                link: '/forms/masks',
-                parentId: 125
-            },
-            {
-                id: 131,
-                label: 'MENUITEMS.FORMS.LIST.ADVANCED',
-                link: '/forms/advanced',
-                parentId: 125
-            },
-            {
-                id: 132,
-                label: 'MENUITEMS.FORMS.LIST.RANGESLIDER',
-                link: '/forms/range-sliders',
-                parentId: 125
-            },
-            {
-                id: 133,
-                label: 'MENUITEMS.FORMS.LIST.VALIDATION',
-                link: '/forms/validation',
-                parentId: 125
-            },
-            {
-                id: 134,
-                label: 'MENUITEMS.FORMS.LIST.WIZARD',
-                link: '/forms/wizard',
-                parentId: 125
-            },
-            {
-                id: 135,
-                label: 'MENUITEMS.FORMS.LIST.EDITORS',
-                link: '/forms/editors',
-                parentId: 125
-            },
-            {
-                id: 136,
-                label: 'MENUITEMS.FORMS.LIST.FILEUPLOADS',
-                link: '/forms/file-uploads',
-                parentId: 125
-            },
-            {
-                id: 137,
-                label: 'MENUITEMS.FORMS.LIST.FORMLAYOUTS',
-                link: '/forms/layouts',
-                parentId: 125
-            }
-        ]
+        label: 't-widgets',
+        icon: "bx bx-pen",
+        link: '/pages/widgets'
     },
     {
         id: 138,
-        label: 'MENUITEMS.TABLES.TEXT',
-        icon: 'ph-table',
+        label: 't-forms',
+        icon: 'bx bx-copy-alt',
         subItems: [
             {
                 id: 139,
-                label: 'MENUITEMS.TABLES.LIST.BASICTABLES',
-                link: '/tables/basic',
+                label: 't-basic-elements',
+                link: '/pages/forms-elements',
                 parentId: 138
             },
             {
-                id: 140,
-                label: 'MENUITEMS.TABLES.LIST.GRIDJS',
-                link: '/tables/gridjs',
+                id: 139,
+                label: 't-form-select',
+                link: '/pages/forms-select',
                 parentId: 138
             },
             {
-                id: 141,
-                label: 'MENUITEMS.TABLES.LIST.LISTJS',
-                link: '/tables/listjs',
+                id: 139,
+                label: 't-checkboxes-radios',
+                link: '/pages/forms-checkboxs-radios',
+                parentId: 138
+            },
+            {
+                id: 139,
+                label: 't-input-masks',
+                link: '/pages/forms-masks',
+                parentId: 138
+            },
+            {
+                id: 139,
+                label: 't-advanced',
+                link: '/pages/forms-advanced',
+                parentId: 138
+            },
+            {
+                id: 139,
+                label: 't-range-slider',
+                link: '/pages/forms-range-sliders',
+                parentId: 138
+            },
+            {
+                id: 139,
+                label: 't-validation',
+                link: '/pages/forms-validation',
+                parentId: 138
+            },
+            {
+                id: 139,
+                label: 't-wizard',
+                link: '/pages/forms-wizard',
+                parentId: 138
+            },
+            {
+                id: 139,
+                label: 't-file-uploads',
+                link: '/pages/forms-file-uploads',
+                parentId: 138
+            },
+            {
+                id: 139,
+                label: 't-layouts',
+                link: '/pages/forms-layouts',
                 parentId: 138
             }
         ]
     },
     {
         id: 142,
-        label: 'MENUITEMS.CHARTS.TEXT',
-        icon: 'ph-chart-pie-slice',
+        label: 't-tables',
+        icon: 'bx bx-table',
         subItems: [
             {
                 id: 143,
-                label: 'MENUITEMS.CHARTS.LIST.LINE',
-                link: '/charts/apex-line',
+                label: 't-basic-tables',
+                link: '/pages/tables-basic',
                 parentId: 142
             },
             {
-                id: 144,
-                label: 'MENUITEMS.CHARTS.LIST.AREA',
-                link: '/charts/apex-area',
+                id: 143,
+                label: 't-grid-js',
+                link: '/pages/tables-gridjs',
                 parentId: 142
-            },
-            {
-                id: 145,
-                label: 'MENUITEMS.CHARTS.LIST.COLUMN',
-                link: '/charts/apex-column',
-                parentId: 142
-            },
-            {
-                id: 146,
-                label: 'MENUITEMS.CHARTS.LIST.BAR',
-                link: '/charts/apex-bar',
-                parentId: 142
-            },
-            {
-                id: 147,
-                label: 'MENUITEMS.CHARTS.LIST.MIXED',
-                link: '/charts/apex-mixed',
-                parentId: 142
-            },
-            {
-                id: 148,
-                label: 'MENUITEMS.CHARTS.LIST.TIMELINE',
-                link: '/charts/apex-timeline',
-                parentId: 142
-            },
-            {
-                id: 148,
-                label: 'MENUITEMS.CHARTS.LIST.RANGEAREA',
-                link: '/charts/range-area',
-                parentId: 142
-            },
-            {
-                id: 148,
-                label: 'MENUITEMS.CHARTS.LIST.FUNNEL',
-                link: '/charts/funnel',
-                parentId: 142
-            },
-            {
-                id: 149,
-                label: 'MENUITEMS.CHARTS.LIST.CANDLSTICK',
-                link: '/charts/apex-candlestick',
-                parentId: 142
-            },
-            {
-                id: 150,
-                label: 'MENUITEMS.CHARTS.LIST.BOXPLOT',
-                link: '/charts/apex-boxplot',
-                parentId: 142
-            },
-            {
-                id: 151,
-                label: 'MENUITEMS.CHARTS.LIST.BUBBLE',
-                link: '/charts/apex-bubble',
-                parentId: 142
-            },
-            {
-                id: 152,
-                label: 'MENUITEMS.CHARTS.LIST.SCATTER',
-                link: '/charts/apex-scatter',
-                parentId: 142
-            },
-            {
-                id: 153,
-                label: 'MENUITEMS.CHARTS.LIST.HEATMAP',
-                link: '/charts/apex-heatmap',
-                parentId: 142
-            },
-            {
-                id: 154,
-                label: 'MENUITEMS.CHARTS.LIST.TREEMAP',
-                link: '/charts/apex-treemap',
-                parentId: 142
-            },
-            {
-                id: 155,
-                label: 'MENUITEMS.CHARTS.LIST.PIE',
-                link: '/charts/apex-pie',
-                parentId: 142
-            },
-            {
-                id: 156,
-                label: 'MENUITEMS.CHARTS.LIST.RADIALBAR',
-                link: '/charts/apex-radialbar',
-                parentId: 142
-            },
-            {
-                id: 157,
-                label: 'MENUITEMS.CHARTS.LIST.RADAR',
-                link: '/charts/apex-radar',
-                parentId: 142
-            },
-            {
-                id: 158,
-                label: 'MENUITEMS.CHARTS.LIST.POLARAREA',
-                link: '/charts/apex-polar',
-                parentId: 142
-            },
-            {
-                id: 159,
-                label: 'MENUITEMS.CHARTS.LIST.Slope',
-                link: '/charts/apex-slope',
-                isNew: true,
-                parentId: 143
-            },
+            }
         ]
     },
     {
         id: 159,
-        label: 'MENUITEMS.ICONS.TEXT',
-        icon: 'ph-traffic-cone',
+        label: 't-apexcharts',
+        icon: 'bx bx-pie-chart-alt-2',
         subItems: [
             {
                 id: 160,
-                label: 'MENUITEMS.ICONS.LIST.REMIX',
-                link: '/icons/remix',
+                label: 't-line',
+                link: '/pages/charts-apex-line',
                 parentId: 159
             },
             {
-                id: 161,
-                label: 'MENUITEMS.ICONS.LIST.BOXICONS',
-                link: '/icons/boxicons',
+                id: 160,
+                label: 't-area',
+                link: '/pages/charts-apex-area',
                 parentId: 159
             },
             {
-                id: 162,
-                label: 'MENUITEMS.ICONS.LIST.MATERIALDESIGN',
-                link: '/icons/materialdesign',
+                id: 160,
+                label: 't-column',
+                link: '/pages/charts-apex-column',
                 parentId: 159
             },
             {
-                id: 163,
-                label: 'MENUITEMS.ICONS.LIST.BOOTSTRAP',
-                link: '/icons/bootstrap',
+                id: 160,
+                label: 't-bar',
+                link: '/pages/charts-apex-bar',
                 parentId: 159
             },
             {
-                id: 164,
-                label: 'MENUITEMS.ICONS.LIST.PHOSPHOR',
-                link: '/icons/phosphor',
+                id: 160,
+                label: 't-mixed',
+                link: '/pages/charts-apex-mixed',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-timeline',
+                link: '/pages/charts-apex-timeline',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-candlstick',
+                link: '/pages/charts-apex-candlestick',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-boxplot',
+                link: '/pages/charts-apex-boxplot',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-bubble',
+                link: '/pages/charts-apex-bubble',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-scatter',
+                link: '/pages/charts-apex-scatter',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-heatmap',
+                link: '/pages/charts-apex-heatmap',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-treemap',
+                link: '/pages/charts-apex-treemap',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-pie',
+                link: '/pages/charts-apex-pie',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-radialbar',
+                link: '/pages/charts-apex-radialbar',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-radar',
+                link: '/pages/charts-apex-radar',
+                parentId: 159
+            },
+            {
+                id: 160,
+                label: 't-radar',
+                link: '/pages/charts-apex-polar',
                 parentId: 159
             }
         ]
     },
     {
         id: 165,
-        label: 'MENUITEMS.MAPS.TEXT',
-        icon: 'ph-map-trifold',
+        label: 't-icons',
+        icon: 'bx bx-traffic-cone',
         subItems: [
             {
                 id: 166,
-                label: 'MENUITEMS.MAPS.LIST.GOOGLE',
-                link: '/maps/google',
+                label: 't-remix',
+                link: '/pages/icons-remix',
                 parentId: 165
             },
             {
-                id: 167,
-                label: 'MENUITEMS.MAPS.LIST.VECTOR',
-                link: '/maps/vector',
+                id: 166,
+                label: 't-boxicons',
+                link: '/pages/icons-boxicons',
                 parentId: 165
             },
             {
-                id: 167,
-                label: 'MENUITEMS.MAPS.LIST.LEAFLET',
-                link: '/maps/leaflet',
+                id: 166,
+                label: 't-materialdesign',
+                link: '/pages/icons-materialdesign',
+                parentId: 165
+            },
+            {
+                id: 166,
+                label: 't-bootstrap',
+                link: '/pages/icons-bootstrap',
                 parentId: 165
             }
         ]
     },
     {
+        id: 165,
+        label: 't-maps',
+        icon: 'bx bx-map-alt',
+        subItems: [
+            {
+                id: 166,
+                label: 't-google',
+                link: '/pages/maps-google',
+                parentId: 165
+            },
+            {
+                id: 166,
+                label: 't-leaflet',
+                link: '/pages/maps-leaflet',
+                parentId: 165
+            },
+        ]
+    },
+    {
         id: 168,
-        label: 'MENUITEMS.MULTILEVEL.TEXT',
-        icon: 'bi bi-share',
+        label: 't-multi-level',
+        icon: 'bx bx-share-alt',
         subItems: [
             {
                 id: 169,
-                label: 'MENUITEMS.MULTILEVEL.LIST.LEVEL1.1',
+                label: 't-level-1.1',
                 parentId: 168
             },
             {
                 id: 170,
-                label: 'MENUITEMS.MULTILEVEL.LIST.LEVEL1.2',
+                label: 't-level-1.2',
                 parentId: 168,
                 subItems: [
                     {
                         id: 171,
-                        label: 'MENUITEMS.MULTILEVEL.LIST.LEVEL1.LEVEL2.1',
+                        label: 't-level-2.1',
                         parentId: 170
                     },
                     {
                         id: 172,
-                        label: 'MENUITEMS.MULTILEVEL.LIST.LEVEL1.LEVEL2.2',
+                        label: 't-level-2.2',
                         parentId: 170,
                         subItems: [
                             {
                                 id: 173,
-                                label: 'MENUITEMS.MULTILEVEL.LIST.LEVEL1.LEVEL2.LEVEL3.1',
+                                label: 't-level-3.1',
                                 parentId: 172
                             },
                             {
                                 id: 174,
-                                label: 'MENUITEMS.MULTILEVEL.LIST.LEVEL1.LEVEL2.LEVEL3.2',
+                                label: 't-level-3.2',
                                 parentId: 172,
 
                             }

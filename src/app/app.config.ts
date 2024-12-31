@@ -10,6 +10,7 @@ import { provideEffects } from '@ngrx/effects';
 import { fakebackendInterceptor } from './core/helpers/fake-backend';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { CRMEffects } from './store/CRM/crm.effects';
 
 export function createTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -26,7 +27,7 @@ export const appConfig: ApplicationConfig = {
       withInterceptorsFromDi(),
     ),
     { provide: HTTP_INTERCEPTORS, useClass: fakebackendInterceptor, multi: true },
-    provideEffects(ChatEffects),
+    provideEffects(ChatEffects,CRMEffects),
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {

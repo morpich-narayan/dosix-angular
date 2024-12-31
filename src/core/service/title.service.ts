@@ -11,4 +11,8 @@ export class TitleService {
   setItem(title: string) {
     this.currentTitle.next(title);
   }
+
+  getItem() {
+    return this.currentTitle.asObservable()
+  }
 }
