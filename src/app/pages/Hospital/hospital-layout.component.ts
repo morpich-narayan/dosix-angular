@@ -22,15 +22,14 @@ export class HospitalLayoutsComponent implements OnInit, AfterViewInit {
   @ViewChild('dashboardTemplate') dashboardTemplate!: TemplateRef<any>;
   currentTitle!: string;
 
-  constructor(private templateRegistry: TemplateRegistryService, private activatedRoute: ActivatedRoute, private titleService: TitleService) { 
+  constructor(private templateRegistry: TemplateRegistryService, private activatedRoute: ActivatedRoute, private titleService: TitleService) {
   }
-  
+
   ngOnInit() {
     this.getChildRoutes();
   }
 
   ngAfterViewInit() {
-    console.log(this.dashboardTemplate);
     this.templateRegistry.registerTemplate(this.dashboardTemplate);
   }
 
@@ -49,7 +48,14 @@ export class HospitalLayoutsComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngOnDestroy(){
-    this.templateRegistry.destroyAll();
+  ngOnDestroy() {
+    if (this.templateRegistry) {
+      this.templateRegistry.unregisterTemplate('template');
+    }
   }
+
+  // ngOnDestroy(){
+  //   this.templateRegistry.destroyAll();
+  //   console.log(this.templateRegistry);
+  // }
 }

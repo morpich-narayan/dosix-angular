@@ -51,7 +51,7 @@ export const PAGE_ROUTES: Routes = [
     ]
   },
   // Chat
-  { path: 'chat', component: ChatComponent },
+  { path: 'apps-chat', component: ChatComponent },
   // Calendar
   { path: 'apps-calendar', component: CalendarComponent },
   // Email

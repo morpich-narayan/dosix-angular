@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { RouterModule } from '@angular/router';
+import { TitleService } from '../../../core/service/title.service';
 
 @Component({
   selector: 'app-email',
@@ -37,11 +38,12 @@ export class EmailComponent {
   usrProfile: any = 'assets/images/users/32/avatar-1.jpg';
   private modalService = inject(NgbModal);
 
-  constructor() { }
+  constructor(private ts:TitleService) { }
 
   @ViewChild('removeItemModal', { static: false }) removeItemModal?: ModalDirective;
 
   ngOnInit(): void {
+    this.ts.setItem('Email')
     /**
      * Fetches the data
      */

@@ -22,9 +22,9 @@ export class InvoiceLayoutsComponent implements OnInit, AfterViewInit {
   @ViewChild('dashboardTemplate') dashboardTemplate!: TemplateRef<any>;
   currentTitle!: string;
 
-  constructor(private templateRegistry: TemplateRegistryService, private activatedRoute: ActivatedRoute, private titleService: TitleService) { 
+  constructor(private templateRegistry: TemplateRegistryService, private activatedRoute: ActivatedRoute, private titleService: TitleService) {
   }
-  
+
   ngOnInit() {
     this.getChildRoutes();
 
@@ -49,7 +49,9 @@ export class InvoiceLayoutsComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngOnDestroy(){
-    this.templateRegistry.destroyAll();
+  ngOnDestroy() {
+    if (this.templateRegistry) {
+      this.templateRegistry.unregisterTemplate('template');
+    }
   }
 }

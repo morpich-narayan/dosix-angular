@@ -326,5 +326,11 @@ export class CalendarComponent {
     this.eventModal?.hide();
   }
 
+  ngOnDestroy() {
+    if (this.templateRegistry) {
+      this.templateRegistry.unregisterTemplate('template');
+    }
+  }
+
 
 }
