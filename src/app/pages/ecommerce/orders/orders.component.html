@@ -1,0 +1,210 @@
+<!-- Start Breadcrumbs -->
+<app-breadcrumbs title="Orders" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<!-- End Breadcrumbs -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body pb-0 mb-lg-n4">
+                <div class="d-flex z-1 position-relative">
+                    <div class="flex-shrink-0">
+                        <div data-provider="flatpickr" data-range-date="true" data-date-format="d M, Y" data-default-date="01 Feb 2023 to 28 Feb 2023">01 Feb 2023 to 28 Feb 2023 <i class="ph-caret-down align-middle ms-1"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body pt-0">
+                <div id="line_chart_basic" class="apex-charts" dir="ltr">
+                    <apx-chart [series]="linebasicChart.series" [chart]="linebasicChart.chart" [legend]="linebasicChart.legend" [grid]="linebasicChart.grid" [markers]="linebasicChart.markers" [stroke]="linebasicChart.stroke" [colors]="linebasicChart.colors" [xaxis]="linebasicChart.xaxis" [yaxis]="linebasicChart.yaxis" dir="ltr"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div><!--end col-->
+</div><!--end row-->
+
+<div class="row row-cols-xxl-5 row-cols-lg-3 row-cols-md-2 row-cols-1">
+    <div class="col">
+        <div class="card border-bottom border-3 card-animate border-secondary">
+            <div class="card-body">
+                <span class="badge bg-success-subtle text-success float-end"><i class="ph-trend-up align-middle me-1"></i> 3.8%</span>
+                <h4 class="mb-4"><span class="counter-value" [countUp]="21438">0</span></h4>
+
+                <p class="text-muted fw-medium text-uppercase mb-0">Total Orders</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card border-bottom border-3 card-animate border-primary">
+            <div class="card-body">
+                <span class="badge bg-success-subtle text-success float-end"><i class="ph-trend-up align-middle me-1"></i> 20.8%</span>
+                <h4 class="mb-4"><span class="counter-value" [countUp]="5963">0</span></h4>
+
+                <p class="text-muted fw-medium text-uppercase mb-0">New Orders</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card border-bottom border-3 card-animate border-warning">
+            <div class="card-body">
+                <span class="badge bg-success-subtle text-success float-end"><i class="ph-trend-up align-middle me-1"></i> 12.6%</span>
+                <h4 class="mb-4"><span class="counter-value" [countUp]="4620">0</span></h4>
+
+                <p class="text-muted fw-medium text-uppercase mb-0">Pending Orders</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card border-bottom border-3 card-animate border-success">
+            <div class="card-body">
+                <span class="badge bg-success-subtle text-success float-end"><i class="ph-trend-up align-middle me-1"></i> 18.7%</span>
+                <h4 class="mb-4"><span class="counter-value" [countUp]="8541">0</span></h4>
+
+                <p class="text-muted fw-medium text-uppercase mb-0">Delivered Orders</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card border-bottom border-3 card-animate border-danger">
+            <div class="card-body">
+                <span class="badge bg-danger-subtle text-danger float-end"><i class="ph-trend-down align-middle me-1"></i> 7.1%</span>
+                <h4 class="mb-4"><span class="counter-value" [countUp]="2314">0</span></h4>
+
+                <p class="text-muted fw-medium text-uppercase mb-0">Cancelled Orders</p>
+            </div>
+        </div>
+    </div>
+</div><!---end row-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card" id="orderList">
+            <div class="card-header">
+                <div class="row align-items-center gy-3">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="search-box">
+                            <input type="text" class="form-control search" placeholder="Search for order ID, customer, order status or something..." [(ngModel)]="term" (keyup)="filterdata()">
+                            <i class="ri-search-line search-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-auto ms-md-auto">
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                            <div ngbDropdown class="dropdown card-header-dropdown sortble-dropdown flex-shrink-0">
+                                <a ngbDropdownToggle class="text-reset dropdown-btn" href="javascript:void(0);">
+                                    <span class="text-muted dropdown-title">{{sortValue}}</span> <i class="mdi mdi-chevron-down ms-1"></i>
+                                </a>
+                                <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end dropdown-responsive">
+                                    <button class="dropdown-item sort" (click)="sortBy('order_date','Order Date')">Order Date</button>
+                                    <button class="dropdown-item sort" (click)="sortBy('id','Order ID')">Order ID</button>
+                                    <button class="dropdown-item sort" (click)="sortBy('price','Amount')">Amount</button>
+                                    <button class="dropdown-item sort" (click)="sortBy('delivery_status','Status')">Status</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-borderless table-centered align-middle table-nowrap mb-0">
+                        <thead class="text-muted table-light">
+                            <tr>
+                                <th>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="option" [(ngModel)]="masterSelected" (change)="checkUncheckAll($event)" id="checkAll">
+                                        <label class="form-check-label" for="checkAll"></label>
+                                    </div>
+                                </th>
+                                <th scope="col" class="sort cursor-pointer" (click)="onSort('id')">
+                                    Order ID</th>
+                                <th scope="col" class="sort cursor-pointer" (click)="onSort('order_date')">Order Date</th>
+                                <th scope="col" class="sort cursor-pointer" (click)="onSort('delivery_date')">Delivery Date</th>
+                                <th scope="col" class="sort cursor-pointer" (click)="onSort('product')">Products</th>
+                                <th scope="col" class="sort cursor-pointer" (click)="onSort('customer')">Customers</th>
+                                <th scope="col" class="sort cursor-pointer" (click)="onSort('shop')">Shop</th>
+                                <th scope="col" class="sort cursor-pointer" (click)="onSort('pay_method')">Payment Method</th>
+                                <th scope="col" class="sort cursor-pointer" (click)="onSort('price')">Amount</th>
+                                <th scope="col" class="sort cursor-pointer" (click)="onSort('ratings')">Rating</th>
+                                <th scope="col" class="sort cursor-pointer" (click)="onSort('delivery_status')">Delivery Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list form-check-all">
+                            @for (data of Order; track $index) {
+                            <tr id="o_{{data._id}}">
+                                <th>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="checkAll" value="{{data._id}}" [(ngModel)]="data.states" (change)="onCheckboxChange($event)">
+                                        <label class="form-check-label"></label>
+                                    </div>
+                                </th>
+                                <td class="order_id"><a routerLink="/ecommerce/order-overview" class="fw-medium link-primary">#TBS2500{{data.id}}</a></td>
+                                <td class="order_date">
+                                    {{data.order_date}}
+                                </td>
+                                <td class="delivery_date">
+                                    {{data.delivery_date}}
+                                </td>
+                                <td class="products">{{data.product}}</td>
+                                <td class="customer">
+                                    {{data.customer}}
+                                </td>
+                                <td class="shop">
+                                    @for (shp of data.shop; track shp.name) {
+                                    <a href="javascript:void(0);" class="text-reset">
+                                        <img src="{{shp.img}}" alt="" class="avatar-xxs rounded-circle me-1 shop-logo">
+                                        <span class="shop-name">{{shp.name}}</span>
+                                    </a>
+                                    }
+                                </td>
+                                <td class="payment_method">{{data.pay_method}}</td>
+                                <td class="amount"><span class="fw-medium">{{data.price}}</span></td>
+                                <td class="rating">
+                                    <h5 class="fs-md fw-medium mb-0">{{data.ratings}}</h5>
+                                </td>
+                                <td class="status"><span class="badge" [ngClass]="{'bg-primary-subtle text-primary': data.delivery_status === 'New',
+                                    'bg-info-subtle text-info': data.delivery_status === 'Shipping',
+                                    'bg-success-subtle text-success': data.delivery_status === 'Delivered',
+                                    'bg-warning-subtle text-warning': data.delivery_status === 'Pending',
+                                    'bg-danger-subtle text-danger': data.delivery_status === 'Out of Delivered'}">{{data.delivery_status}}</span></td>
+                                <td>
+                                    <ul class="d-flex gap-2 list-unstyled mb-0">
+                                        <li>
+                                            <a routerLink="/ecommerce/order-overview" class="btn btn-subtle-primary btn-icon btn-sm "><i class="ph-eye"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" (click)="editOrder($index)" class="btn btn-subtle-secondary btn-icon btn-sm edit-item-btn"><i class="ph-pencil"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" (click)="removeOrder(data.id)" class="btn btn-subtle-danger btn-icon btn-sm remove-item-btn"><i class="ph-trash"></i></a>
+                                        </li>
+                                    </ul>
+                                    <!-- </td> -->
+                            </tr>
+                        }
+                        </tbody><!-- end tbody -->
+
+                    </table><!-- end table -->
+                    <div id="elmLoader">
+                        <div class="spinner-border text-primary avatar-sm" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="noresult d-none">
+                        <div class="text-center py-4">
+                            <i class="ph-magnifying-glass fs-1 text-primary"></i>
+                            <h5 class="mt-2">Sorry! No Result Found</h5>
+                            <p class="text-muted mb-0">We've searched more than 150+ orders We did not find any orders
+                                for you search.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="pagination-element" class="d-flex justify-content-center justify-content-sm-end mt-2">
+                    <pagination class="pagination-wrap hstack gap-2" [totalItems]="Orderlist?.length" [itemsPerPage]="8" (pageChanged)="pageChanged($event)"></pagination>
+                </div>
+            </div>
+        </div>
+        <!-- end card -->
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->

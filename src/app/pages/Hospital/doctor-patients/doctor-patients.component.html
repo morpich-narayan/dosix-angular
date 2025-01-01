@@ -1,1 +1,427 @@
-<p>doctor-patients works!</p>
+<div id="appointmentList">
+    <div class="row g-3 mb-3">
+        <div class="col-xxl-3">
+            <div class="search-box">
+                <input type="text" class="form-control search" placeholder="Search patients name, email, contact, date etc...">
+                <i class="ri-search-line search-icon"></i>
+            </div>
+        </div><!--end col-->
+        <div class="col-xxl-3">
+            <input type="text" class="form-control flatpickr-input active" mwlFlatpickr data-provider="flatpickr" data-date-format="d M, Y" data-range-date="true" readonly="readonly" placeholder="Select date">
+        </div><!--end col-->
+    </div><!--end row-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div>
+                <div>
+                    <div class="table-responsive">
+                        <table class="table table-custom align-middle table-borderless table-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="option" id="checkAll">
+                                            <label class="form-check-label" for="checkAll"></label>
+                                        </div>
+                                    </th>
+                                    <th class="sort cursor-pointer" data-sort="patientName">Patient Name</th>
+                                    <th class="sort cursor-pointer" data-sort="diseases">Diseases</th>
+                                    <th class="sort cursor-pointer" data-sort="address">Address</th>
+                                    <th class="sort cursor-pointer" data-sort="age">Age</th>
+                                    <th class="sort cursor-pointer" data-sort="date">Appointment Date</th>
+                                    <th class="sort cursor-pointer" data-sort="status">Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list form-check-all">
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Sadie Hampton <span class="badge bg-danger ms-1">Urgent</span></a></h6>
+                                    </td>
+                                    <td class="diseases">Stomach Aches</td>
+                                    <td class="address">Suite 791 7565 Billy Springs, Lake Trista, WY 40554-5564</td>
+                                    <td class="age">25 Years</td>
+                                    <td class="date">25 Jan, 2024</td>
+                                    <td>
+                                        <span class="badge bg-secondary-subtle text-secondary status">New</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Angie Henry</a></h6>
+                                    </td>
+                                    <td class="diseases">Conjunctivitis ("pink eye“)</td>
+                                    <td class="address">pt. 978 560 Carlton Lake, Port Stevenfurt, WA 79130</td>
+                                    <td class="age">30 Years</td>
+                                    <td class="date">19 Dec, 2023</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Robert Trusty</a></h6>
+                                    </td>
+                                    <td class="diseases">Infectious mononucleosis</td>
+                                    <td class="address">Schöllerstr. 38, West Fynndorf, BE 45043</td>
+                                    <td class="age">22 Years</td>
+                                    <td class="date">03 March, 2024</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Utler Anthony</a></h6>
+                                    </td>
+                                    <td class="diseases">Allergies</td>
+                                    <td class="address">Rua Alicia Granado, 1, San Fernando, Leo 47116</td>
+                                    <td class="age">21 Years</td>
+                                    <td class="date">16 June, 2022</td>
+                                    <td>
+                                        <span class="badge bg-danger-subtle text-danger status">In active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Sheila Gonzalez <span class="badge bg-danger ms-1">Urgent</span></a></h6>
+                                    </td>
+                                    <td class="diseases">Cryptosporidiosis</td>
+                                    <td class="address">9776 Konopelski Loaf, Ratkemouth, MD 55036</td>
+                                    <td class="age">22 Years</td>
+                                    <td class="date">15 Nov, 2023</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Amanda Reynolds</a></h6>
+                                    </td>
+                                    <td class="diseases">Leptospirosis</td>
+                                    <td class="address">3307 Cruz Trail, Magdalenaview, NV 57322</td>
+                                    <td class="age">26 Years</td>
+                                    <td class="date">02 Feb, 2024</td>
+                                    <td>
+                                        <span class="badge bg-secondary-subtle text-secondary status">New</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Debra Esquibel <span class="badge bg-danger ms-1">Urgent</span></a></h6>
+                                    </td>
+                                    <td class="diseases">Tuberculosis</td>
+                                    <td class="address">602 Shirely Gardens, Rinamouth, MN 85880</td>
+                                    <td class="age">33 Years</td>
+                                    <td class="date">28 Dec, 2024</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Confirmed</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Jodie Bentley</a></h6>
+                                    </td>
+                                    <td class="diseases">Hepatitis B</td>
+                                    <td class="address">Eschenweg 95, Finiaheim, BY 61836</td>
+                                    <td class="age">18 Years</td>
+                                    <td class="date">08 Jan, 2024</td>
+                                    <td>
+                                        <span class="badge bg-secondary-subtle text-secondary status">New</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Amanda Reynolds</a></h6>
+                                    </td>
+                                    <td class="diseases">Leptospirosis</td>
+                                    <td class="address">Eichenweg 67a, Süd Estelle, SH 63088</td>
+                                    <td class="age">36 Years</td>
+                                    <td class="date">11 Feb, 2020</td>
+                                    <td>
+                                        <span class="badge bg-danger-subtle text-danger status">In active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Debra Esquibel</a></h6>
+                                    </td>
+                                    <td class="diseases">Tuberculosis</td>
+                                    <td class="address">Dhünnstr. 67c, Nord Liviabrunn, MV 81244</td>
+                                    <td class="age">25 Years</td>
+                                    <td class="date">26 March, 2024</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td>
+                                        <h6 class="mb-0"><a href="#!" class="text-reset patientName">Odie Jakubowski</a></h6>
+                                    </td>
+                                    <td class="diseases">Cryptosporidiosis</td>
+                                    <td class="address">7026 Promenade Leo Hamon, 07815 Pontoise</td>
+                                    <td class="age">39 Years</td>
+                                    <td class="date">14 July, 2024</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static">
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+                                
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!--end table-responsive-->
+
+                    <div class="noresult" style="display: none">
+                        <div class="text-center py-4">
+                            <div class="avatar-md mx-auto mb-4">
+                                <div class="avatar-title bg-light text-primary rounded-circle fs-4xl">
+                                    <i class="bi bi-search"></i>
+                                </div>
+                            </div>
+                            <h5 class="mt-2">Sorry! No Result Found</h5>
+                            <p class="text-muted mb-0">We've searched more than 100+ patient We did not find any patient for you search.</p>
+                        </div>
+                    </div>
+                    <!-- end noresult -->
+
+                    <div class="row mb-4 align-items-center" id="pagination-element">
+                        <div class="col-sm">
+                            <div class="text-muted text-center text-sm-start">
+                                Showing <span class="fw-semibold">8</span> of <span class="fw-semibold">20</span> Results
+                            </div>
+                        </div>
+
+                        <div class="col-sm-auto mt-3 mt-sm-0">
+                            <ul class="pagination pagination-separated mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link">← Pre</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link">1</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link">Next →</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end pagination-element -->
+                </div>
+            </div><!--end card-->
+        </div><!--end col-->
+    </div><!--end row-->
+</div>

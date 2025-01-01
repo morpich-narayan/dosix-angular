@@ -65,6 +65,19 @@ import { UiListsComponent } from '../pages/bootstrap/ui-lists/ui-lists.component
 import { UiGeneralComponent } from '../pages/bootstrap/ui-general/ui-general.component';
 import { UiUtilitiesComponent } from '../pages/bootstrap/ui-utilities/ui-utilities.component';
 import { WidgetsComponent } from '../pages/widgets/widgets.component';
+import { EcommerceDashoboardComponent } from '../pages/ecommerce/ecommerce-dashoboard/ecommerce-dashoboard.component';
+import { EcommerceProductsComponent } from '../pages/ecommerce/ecommerce-products/ecommerce-products.component';
+import { EcommerceProductDetailsComponent } from '../pages/ecommerce/ecommerce-product-details/ecommerce-product-details.component';
+import { EcommerceAddProductComponent } from '../pages/ecommerce/ecommerce-add-product/ecommerce-add-product.component';
+import { EcommerceCartComponent } from '../pages/ecommerce/ecommerce-cart/ecommerce-cart.component';
+import { EcommerceCheckoutComponent } from '../pages/ecommerce/ecommerce-checkout/ecommerce-checkout.component';
+import { EcommerceCustomersComponent } from '../pages/ecommerce/ecommerce-customers/ecommerce-customers.component';
+import { EcommerceOrdersComponent } from '../pages/ecommerce/ecommerce-orders/ecommerce-orders.component';
+import { AddProductComponent } from '../pages/ecommerce/add-product/add-product.component';
+import { CartComponent } from '../pages/ecommerce/cart/cart.component';
+import { CheckoutComponent } from '../pages/ecommerce/checkout/checkout.component';
+import { OrdersComponent } from '../pages/ecommerce/orders/orders.component';
+import { ListComponent } from '../pages/invoice/list/list.component';
 
 export const PAGE_ROUTES: Routes = [
   // Hospital
@@ -88,9 +101,24 @@ export const PAGE_ROUTES: Routes = [
     loadComponent: () => import('./../pages/invoice/invoice-layout.component').then(c => c.InvoiceLayoutsComponent),
     children: [
       { path: '', redirectTo: 'apps-invoices-list', pathMatch: 'full' },
-      { path: 'apps-invoices-list', component: InvoiceListComponent, data: { title: 'Invoice List' } },
+      { path: 'apps-invoices-list', component: ListComponent, data: { title: 'Invoice List' } },
       { path: 'apps-invoices-overview', component: InvoiceOverviewComponent, data: { title: 'Invoice Overview' } },
       { path: 'apps-invoices-create', component: InvoiceCreateComponent, data: { title: 'Create Invoice' } },
+    ]
+  },
+  // Ecommerce
+  {
+    path: 'ecommerce',
+    loadComponent: () => import('./../pages/ecommerce/ecommerce-layout.component').then(c => c.EcommerceLayoutsComponent),
+    children: [
+      { path: '', redirectTo: 'dashboard-ecommerce', pathMatch: 'full' },
+      { path: 'dashboard-ecommerce', component: EcommerceDashoboardComponent , data: { title: 'Overview' } },
+      { path: 'apps-ecommerce-products', component: EcommerceProductsComponent, data: { title: 'Products'} },
+      { path: 'apps-ecommerce-product-details', component: EcommerceProductDetailsComponent, data: { title: 'Product Overview' } },
+      { path: 'apps-ecommerce-add-product', component: AddProductComponent, data: { title: 'Add Product' } },
+      { path: 'apps-ecommerce-cart', component: CartComponent , data: { title: 'Shopping Cart' } },
+      { path: 'apps-ecommerce-checkout', component: CheckoutComponent , data: { title: 'Checkout' } },
+      { path: 'apps-ecommerce-orders', component: OrdersComponent , data: { title: 'Orders' } },
     ]
   },
   // Chat

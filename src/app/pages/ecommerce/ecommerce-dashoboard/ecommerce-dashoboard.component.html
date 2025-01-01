@@ -1,0 +1,646 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row g-4">
+            <div class="col-md-6 col-xl-3">
+                <p class="text-uppercase fw-medium text-muted text-truncate fs-sm d-flex align-items-center gap-2"><i
+                        class="ph-wallet fs-xl"></i> Total Revenue</p>
+                <div class="p-3 border border-dashed rounded-2">
+                    <h4 class="fw-semibold mb-3">$<span class="counter-value" [countUp]="643.12">0</span>M </h4>
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <h5 class="text-success fs-xs mb-0">
+                            <i class="ri-arrow-right-up-line fs-sm align-middle"></i> +19.07 %
+                        </h5>
+                        <p class="text-muted mb-0">than last week</p>
+                    </div>
+                </div>
+            </div><!--end col-->
+            <div class="col-md-6 col-xl-3">
+                <p class="text-uppercase fw-medium text-muted text-truncate fs-sm d-flex align-items-center gap-2"><i
+                        class="ph-coins fs-xl"></i> Total Sales</p>
+                <div class="p-3 border border-dashed rounded-2">
+                    <h4 class="fw-semibold mb-3">$<span class="counter-value" [countUp]="1543.59">0</span>M </h4>
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <h5 class="text-success fs-xs mb-0">
+                            <i class="ri-arrow-right-up-line fs-sm align-middle"></i> +24.53 %
+                        </h5>
+                        <p class="text-muted mb-0">than last week</p>
+                    </div>
+                </div>
+            </div><!--end col-->
+            <div class="col-md-6 col-xl-3">
+                <p class="text-uppercase fw-medium text-muted text-truncate fs-sm d-flex align-items-center gap-2"><i
+                        class="ph-bag fs-xl"></i> Total Orders</p>
+                <div class="p-3 border border-dashed rounded-2">
+                    <h4 class="fw-semibold mb-3"><span class="counter-value" [countUp]="16015">0</span></h4>
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <h5 class="text-success fs-xs mb-0">
+                            <i class="ri-arrow-right-up-line fs-sm align-middle"></i> +8.13 %
+                        </h5>
+                        <p class="text-muted mb-0">than last week</p>
+                    </div>
+                </div>
+            </div><!--end col-->
+            <div class="col-md-6 col-xl-3">
+                <p class="text-uppercase fw-medium text-muted text-truncate fs-sm d-flex align-items-center gap-2"><i
+                        class="ph-users-three fs-xl"></i> Customers</p>
+                <div class="p-3 border border-dashed rounded-2">
+                    <h4 class="fw-semibold mb-3"><span class="counter-value" [countUp]="598">0</span>k </h4>
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <h5 class="text-success fs-xs mb-0">
+                            <i class="ri-arrow-right-up-line fs-sm align-middle"></i> +10.42 %
+                        </h5>
+                        <p class="text-muted mb-0">than last week</p>
+                    </div>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xxl-9">
+        <div class="card">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card-header border-0 align-items-center d-flex">
+                        <h4 class="card-title mb-0 flex-grow-1">Order Overview</h4>
+                        <div>
+                            <button type="button" class="btn btn-subtle-secondary btn-sm">
+                                ALL
+                            </button>
+                            <button type="button" class="btn btn-subtle-secondary btn-sm">
+                                1M
+                            </button>
+                            <button type="button" class="btn btn-subtle-secondary btn-sm">
+                                6M
+                            </button>
+                            <button type="button" class="btn btn-subtle-primary btn-sm">
+                                1Y
+                            </button>
+                        </div>
+                    </div><!-- end card header -->
+                    <div class="card-body">
+                        <div class="w-100">
+                            <app-order-overview></app-order-overview>
+                            <!-- <div id="chart-container" data-colors='["--tb-primary", "--tb-danger", "--tb-border-color"]'
+                                class="e-charts"></div> -->
+                        </div>
+                    </div><!-- end card body -->
+                </div>
+            </div>
+        </div><!-- end card -->
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body h-100 row g-4">
+                    <div class="col-lg-5">
+                        <div class="me-5 mb-3">
+                            <div id="mini-chart-6" data-colors='["--tb-primary"]' class="apex-charts" dir="ltr"></div>
+                        </div>
+                        <p class="text-muted mb-2">Budget (USD)</p>
+                        <h4>$750.36M <small class="text-success fs-sm fw-normal"><i
+                                    class="ph-arrow-up align-baseline"></i> 2.17%</small></h4>
+                        <p class="text-muted text-truncate mb-0">Budget in than last years</p>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="me-5 mb-3">
+                            <div id="mini-chart-7" data-colors='["--tb-info"]' class="apex-charts" dir="ltr"></div>
+                        </div>
+                        <p class="text-muted mb-2">Payouts (USD)</p>
+                        <h4>$7,45,123 <small class="text-danger fs-sm fw-normal"><i
+                                    class="ph-arrow-down align-baseline"></i> -1.36%</small></h4>
+                        <p class="text-muted text-truncate mb-0">Payouts in than last years</p>
+                    </div>
+                    <div class="col-lg-2 align-self-end">
+                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal"
+                            data-bs-target="#addAmount">Add Amount</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end col -->
+    <div class="col-xxl-3">
+        <div class="card card-height-100">
+            <div class="card-header d-flex align-items-center">
+                <h4 class="card-title mb-0 flex-grow-1">Recent Activity</h4>
+                <div class="flex-shrink-0">
+                    <div class="dropdown card-header-dropdown">
+                        <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="ri-more-fill"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" href="#">Current Years</a>
+                            <a class="dropdown-item" href="#">Last Years</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body px-0">
+                <div data-simplebar class="px-3" style="max-height: 750px;">
+                    <div class="vstack gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-sm flex-shrink-0">
+                                <div class="avatar-title bg-light rounded">
+                                    <img src="assets/images/users/48/avatar-2.jpg" alt="" class="img-fluid rounded">
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">Marcelino Smith</h6>
+                                <p class="mb-0 fs-sm text-muted">Order ID: #TBD15336</p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-info-subtle text-info">Refund</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-sm flex-shrink-0">
+                                <div class="avatar-title bg-light rounded">
+                                    <img src="assets/images/users/avatar-3.jpg" alt="" class="img-fluid rounded">
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">Ubaldo Bartell</h6>
+                                <p class="mb-0 fs-sm text-muted">Order ID: #TBD15479</p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-success-subtle text-success">Delivered</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-sm flex-shrink-0">
+                                <div class="avatar-title bg-light rounded">
+                                    <img src="assets/images/users/avatar-4.jpg" alt="" class="img-fluid rounded">
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">Dallin Schowalter</h6>
+                                <p class="mb-0 fs-sm text-muted">Order ID: #TBD11525</p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-danger-subtle text-danger">Cancelled</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-sm flex-shrink-0">
+                                <div class="avatar-title bg-light rounded">
+                                    <img src="assets/images/users/avatar-5.jpg" alt="" class="img-fluid rounded">
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">Federico Hand</h6>
+                                <p class="mb-0 fs-sm text-muted">Order ID: #TBD11789</p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-secondary-subtle text-secondary">New</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-sm flex-shrink-0">
+                                <div class="avatar-title bg-light rounded">
+                                    <img src="assets/images/users/avatar-6.jpg" alt="" class="img-fluid rounded">
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">Axel Kozey</h6>
+                                <p class="mb-0 fs-sm text-muted">Order ID: #TBD16493</p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-success-subtle text-success">Delivered</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-sm flex-shrink-0">
+                                <div class="avatar-title bg-light rounded text-primary">
+                                    AK
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">Axel Kozey</h6>
+                                <p class="mb-0 fs-sm text-muted">Order ID: #TBD14650</p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-secondary-subtle text-secondary">New</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-sm flex-shrink-0">
+                                <div class="avatar-title bg-light rounded">
+                                    <img src="assets/images/users/avatar-7.jpg" alt="" class="img-fluid rounded">
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">Dianna Bogan</h6>
+                                <p class="mb-0 fs-sm text-muted">Order ID: #TBD154120</p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-success-subtle text-success">Delivered</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-sm flex-shrink-0">
+                                <div class="avatar-title bg-light rounded">
+                                    <img src="assets/images/users/avatar-8.jpg" alt="" class="img-fluid rounded">
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">Tyrell Kerluke</h6>
+                                <p class="mb-0 fs-sm text-muted">Order ID: #TBD15465</p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-success-subtle text-success">Delivered</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-sm flex-shrink-0">
+                                <div class="avatar-title bg-light rounded text-primary">
+                                    BN
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">Bethany Nienow</h6>
+                                <p class="mb-0 fs-sm text-muted">Order ID: #TBD14347</p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-danger-subtle text-danger">Cancelled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--end col-->
+</div><!--end row-->
+
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card" id="contactList">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">Product Stock</h4>
+                <div class="flex-shrink-0">
+                    <div class="dropdown card-header-dropdown sortble-dropdown">
+                        <a class="text-reset dropdown-btn fs-sm" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <span class="fw-semibold text-uppercase">Sort by:
+                            </span><span class="text-muted dropdown-title">Order Date</span> <i
+                                class="mdi mdi-chevron-down ms-1"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <button class="dropdown-item sort" data-sort="order_date">Order Date</button>
+                            <button class="dropdown-item sort" data-sort="order_id">Order ID</button>
+                            <button class="dropdown-item sort" data-sort="amount">Amount</button>
+                            <button class="dropdown-item sort" data-sort="status">Status</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive table-card">
+                    <table class="table table-centered align-middle table-nowrap mb-0">
+                        <thead class="text-muted">
+                            <tr>
+                                <th scope="col" class="sort cursor-pointer" data-sort="images">Images</th>
+                                <th scope="col" class="sort cursor-pointer" data-sort="name">Product Name</th>
+                                <th scope="col" class="sort cursor-pointer" data-sort="stock">Stock</th>
+                                <th scope="col" class="sort cursor-pointer" data-sort="sales">Sales</th>
+                                <th scope="col" class="sort cursor-pointer" data-sort="price">Price</th>
+                                <th scope="col" class="sort cursor-pointer" data-sort="revenue">Revenue</th>
+                                <th scope="col" class="sort cursor-pointer" data-sort="status">Status</th>
+                                <th scope="col" class="sort cursor-pointer">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list">
+                            <tr>
+                                <td class="images">
+                                    <img src="assets/images/products/48/img-5.png" alt=""
+                                        class="avatar-xxs rounded-circle">
+                                </td>
+                                <td>
+                                    <a href="#!" class="text-reset name">Willage Volleyball Ball Size 4</a>
+                                </td>
+                                <td class="stock">
+                                    189
+                                </td>
+                                <td class="sales">
+                                    2451
+                                </td>
+                                <td class="price">$59.32</td>
+                                <td class="revenue">
+                                    $1542.89
+                                </td>
+                                <td>
+                                    <span class="badge bg-danger-subtle text-danger status">Disable</span>
+                                </td>
+                                <td>
+                                    <ul class="d-flex gap-2 list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" data-bs-toggle="modal"
+                                                class="btn btn-subtle-secondary btn-icon btn-sm edit-item-btn"><i
+                                                    class="ph-pencil"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" data-bs-toggle="modal"
+                                                class="btn btn-subtle-danger btn-icon btn-sm remove-item-btn"><i
+                                                    class="ph-trash"></i></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="images">
+                                    <img src="assets/images/products/48/img-6.png" alt=""
+                                        class="avatar-xxs rounded-circle">
+                                </td>
+                                <td>
+                                    <a href="#!" class="text-reset name">Blive Printed Men Round Neck</a>
+                                </td>
+                                <td class="stock">
+                                    54
+                                </td>
+                                <td class="sales">
+                                    401
+                                </td>
+                                <td class="price">$110.00</td>
+                                <td class="revenue">
+                                    $579.00
+                                </td>
+                                <td>
+                                    <span class="badge bg-success-subtle text-success status">Active</span>
+                                </td>
+                                <td>
+                                    <ul class="d-flex gap-2 list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" data-bs-toggle="modal"
+                                                class="btn btn-subtle-secondary btn-icon btn-sm edit-item-btn"><i
+                                                    class="ph-pencil"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" data-bs-toggle="modal"
+                                                class="btn btn-subtle-danger btn-icon btn-sm remove-item-btn"><i
+                                                    class="ph-trash"></i></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="images">
+                                    <img src="assets/images/products/48/img-7.png" alt=""
+                                        class="avatar-xxs rounded-circle">
+                                </td>
+                                <td>
+                                    <a href="#!" class="text-reset name">Cotton Collar Tshirts For Men</a>
+                                </td>
+                                <td class="stock">
+                                    77
+                                </td>
+                                <td class="sales">
+                                    932
+                                </td>
+                                <td class="price">$79.99</td>
+                                <td class="revenue">
+                                    $901.99
+                                </td>
+                                <td>
+                                    <span class="badge bg-success-subtle text-success status">Active</span>
+                                </td>
+                                <td>
+                                    <ul class="d-flex gap-2 list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" data-bs-toggle="modal"
+                                                class="btn btn-subtle-secondary btn-icon btn-sm edit-item-btn"><i
+                                                    class="ph-pencil"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" data-bs-toggle="modal"
+                                                class="btn btn-subtle-danger btn-icon btn-sm remove-item-btn"><i
+                                                    class="ph-trash"></i></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="images">
+                                    <img src="assets/images/products/48/img-8.png" alt=""
+                                        class="avatar-xxs rounded-circle">
+                                </td>
+                                <td>
+                                    <a href="#!" class="text-reset name">Full Sleeve Solid Men Sweatshirt/Hoody</a>
+                                </td>
+                                <td class="stock">
+                                    650
+                                </td>
+                                <td class="sales">
+                                    1564
+                                </td>
+                                <td class="price">$39.99</td>
+                                <td class="revenue">
+                                    $1123.85
+                                </td>
+                                <td>
+                                    <span class="badge bg-success-subtle text-success status">Active</span>
+                                </td>
+                                <td>
+                                    <ul class="d-flex gap-2 list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" data-bs-toggle="modal"
+                                                class="btn btn-subtle-secondary btn-icon btn-sm edit-item-btn"><i
+                                                    class="ph-pencil"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" data-bs-toggle="modal"
+                                                class="btn btn-subtle-danger btn-icon btn-sm remove-item-btn"><i
+                                                    class="ph-trash"></i></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="images">
+                                    <img src="assets/images/products/48/img-11.png" alt=""
+                                        class="avatar-xxs rounded-circle">
+                                </td>
+                                <td>
+                                    <a href="#!" class="text-reset name">Jeans Blue Men Boxer</a>
+                                </td>
+                                <td class="stock">
+                                    0
+                                </td>
+                                <td class="sales">
+                                    589
+                                </td>
+                                <td class="price">$149.00</td>
+                                <td class="revenue">
+                                    $1298.63
+                                </td>
+                                <td>
+                                    <span class="badge bg-danger-subtle text-danger status">Disable</span>
+                                </td>
+                                <td>
+                                    <ul class="d-flex gap-2 list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" data-bs-toggle="modal"
+                                                class="btn btn-subtle-secondary btn-icon btn-sm edit-item-btn"><i
+                                                    class="ph-pencil"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" data-bs-toggle="modal"
+                                                class="btn btn-subtle-danger btn-icon btn-sm remove-item-btn"><i
+                                                    class="ph-trash"></i></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody><!-- end tbody -->
+                    </table><!-- end table -->
+                    <div class="noresult" style="display: none">
+                        <div class="text-center">
+                            <h5 class="mt-2">Sorry! No Result Found</h5>
+                            <p class="text-muted mb-0">We've searched more than 150+ transactions We did not find any
+                                transactions for you search.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mt-4 pt-2 row">
+                    <div class="col-sm">
+                        <div class="text-muted text-center text-sm-start">
+                            Showing <span class="fw-semibold">5</span> of <span class="fw-semibold">6</span> Results
+                        </div>
+                    </div>
+                    <div class="col-sm-auto mt-3 mt-sm-0">
+                        <div class="pagination-wrap hstack gap-2 justify-content-center">
+                            <a class="page-item pagination-prev disabled" href="javascript:void(0)">
+                                Previous
+                            </a>
+                            <ul class="pagination listjs-pagination mb-0">
+                                <li class="active"><a class="page" href="#" data-i="1" data-page="5">1</a></li>
+                                <li><a class="page" href="#" data-i="2" data-page="5">2</a></li>
+                            </ul>
+                            <a class="page-item pagination-next" href="javascript:void(0)">
+                                Next
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--end col-->
+    <div class="col-lg-6 col-xxl-4">
+        <div class="card card-height-100">
+            <div class="card-header d-flex align-items-center">
+                <h5 class="card-title mb-0 flex-grow-1">Sales Earning</h5>
+                <div class="dropdown card-header-dropdown">
+                    <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <i class="ri-more-fill"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" href="#">Current Week</a>
+                        <a class="dropdown-item" href="#">Last Week</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <div echarts [options]="chartOptions" class="echart" style="height: 400px; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div><!--end col-->
+    <div class="col-xxl-3 col-xl-6">
+        <div class="card card-height-100">
+            <div class="card-header d-flex">
+                <h5 class="card-title flex-grow-1 mb-0">Cart</h5>
+                <div class="flex-shrink-0">
+                    <a href="#!">See All</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <apx-chart [series]="chartOptionsTwo.series" [chart]="chartOptionsTwo.chart"
+                        [xaxis]="chartOptionsTwo.xaxis" [stroke]="chartOptionsTwo.stroke"
+                        [dataLabels]="chartOptionsTwo.dataLabels" [yaxis]="chartOptionsTwo.yaxis"
+                        [labels]="chartOptionsTwo.labels" [legend]="chartOptionsTwo.legend" [title]="chartOptionsTwo.title"
+                        [subtitle]="chartOptionsTwo.subtitle" [colors]="chartOptionsTwo.colors" dir="ltr"></apx-chart>
+                <p class="mb-2 text-muted">Abandoned Cart: 450</p>
+                <p class="mb-0 text-muted">Abandoned Revenue: 1200</p>
+            </div>
+        </div>
+    </div><!--end col-->
+    <div class="col-xxl-5 col-xl-6">
+        <div class="card card-height-100">
+            <div class="card-header d-flex align-items-center">
+                <h5 class="card-title flex-grow-1 mb-0">Top Selling Products</h5>
+                <div class="flex-shrink-0">
+                    <a href="apps-ecommerce-products.html">View All</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="swiper sellingProduct">
+                    <ngb-carousel [interval]="2000" [showNavigationIndicators]="true" [showNavigationArrows]="true">
+                        <ng-template ngbSlide>
+                            <div class="swiper-slide">
+                                <div class="card shadow-none border mb-0">
+                                    <div class="card-body p-2">
+                                        <div class="p-3 bg-light">
+                                            <img src="assets/images/products/img-3.png" alt="" class="img-fluid">
+                                        </div>
+                                        <a href="#!">
+                                            <h6 class="mt-2 mb-1 text-truncate">Fossil Gen 5E Smart Watch</h6>
+                                        </a>
+                                        <p class="mb-0 text-muted">Sales: <b>4879</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <div class="swiper-slide">
+                                <div class="card shadow-none border mb-0">
+                                    <div class="card-body p-2">
+                                        <div class="p-3 bg-light">
+                                            <img src="assets/images/products/img-4.png" alt="" class="img-fluid">
+                                        </div>
+                                        <a href="#!">
+                                            <h6 class="mt-2 mb-1 text-truncate">Super Bass Blutooth Wireless Headphone
+                                            </h6>
+                                        </a>
+                                        <p class="mb-0 text-muted">Sales: <b>4879</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <div class="swiper-slide">
+                                <div class="card shadow-none border mb-0">
+                                    <div class="card-body p-2">
+                                        <div class="p-3 bg-light">
+                                            <img src="assets/images/products/img-12.png" alt="" class="img-fluid">
+                                        </div>
+                                        <a href="#!">
+                                            <h6 class="mt-2 mb-1 text-truncate">MAG Back To The Future Shoes</h6>
+                                        </a>
+                                        <p class="mb-0 text-muted">Sales: <b>4879</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <div class="swiper-slide">
+                                <div class="card shadow-none border mb-0">
+                                    <div class="card-body p-2">
+                                        <div class="p-3 bg-light">
+                                            <img src="assets/images/products/img-4.png" alt="" class="img-fluid">
+                                        </div>
+                                        <a href="#!">
+                                            <h6 class="mt-2 mb-1 text-truncate">Super Bass Blutooth Wireless Headphone
+                                            </h6>
+                                        </a>
+                                        <p class="mb-0 text-muted">Sales: <b>4879</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngb-carousel>
+                </div>
+            </div>
+        </div>
+    </div><!--end col-->
+</div><!--end row-->

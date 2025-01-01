@@ -11,6 +11,10 @@ import { fakebackendInterceptor } from './core/helpers/fake-backend';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { CRMEffects } from './store/CRM/crm.effects';
+import { NGX_ECHARTS_CONFIG } from 'ngx-echarts';
+import * as echarts from 'echarts';
+import { OrdersEffects } from './store/Orders/order.effects';
+import { InvoiceEffects } from './store/Invoices/invoices.effects';
 
 export function createTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -27,7 +31,7 @@ export const appConfig: ApplicationConfig = {
       withInterceptorsFromDi(),
     ),
     { provide: HTTP_INTERCEPTORS, useClass: fakebackendInterceptor, multi: true },
-    provideEffects(ChatEffects,CRMEffects),
+    provideEffects(ChatEffects,CRMEffects,OrdersEffects,InvoiceEffects),
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
@@ -38,5 +42,7 @@ export const appConfig: ApplicationConfig = {
         defaultLanguage: 'en',
       })
     ),
+
+    { provide: NGX_ECHARTS_CONFIG, useValue: { echarts } }
   ]
 };

@@ -3,6 +3,7 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { attachementsData, bookmarkData, callsData, ChannelsData, chatContactData, chatData, messages } from '../data/chat';
+import { orderList } from '../data/order';
 
 
 @Injectable()
@@ -80,6 +81,44 @@ export class fakebackendInterceptor implements HttpInterceptor {
                     return throwError({ status: 401, error: { message: 'No Data Found' } });
                 }
             }
+            // get orderList
+            if (request.url.endsWith('/app/orderList') && request.method === 'GET') {
+                if (orderList) {
+                    return of(new HttpResponse({ status: 200, body: orderList }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+            // Add orderList list
+            if (request.url.endsWith('/app/orderList') && request.method === 'POST') {
+                const newUser = request.body;
+                if (orderList) {
+                    return of(new HttpResponse({ status: 200, body: newUser }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+
+            // Update orderList list
+            if (request.url.endsWith('/app/orderList') && request.method === 'PUT') {
+                const updatedUser = request.body;
+                if (orderList) {
+                    return of(new HttpResponse({ status: 200, body: updatedUser }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+
+            // DELETE orderList list
+            if (request.url.endsWith('/app/orderList') && request.method === 'DELETE') {
+                const updatedUser = request.body;
+                if (orderList) {
+                    return of(new HttpResponse({ status: 200, body: updatedUser })); // respond 200 OK
+                } else {
+                    return throwError({ status: 401, error: { message: 'Unauthorised' } });
+                }
+            }
+
             return next.handle(request);
 
         }))

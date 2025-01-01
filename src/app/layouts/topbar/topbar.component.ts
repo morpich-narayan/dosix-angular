@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, ComponentRef, SimpleChanges, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ComponentFactoryResolver, ComponentRef, SimpleChanges, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { LoadComponateComponent } from './load-componate/load-componate.component';
 import { CommonModule } from '@angular/common';
 import { TemplateRegistryService } from '../../../core/service/template-registry.service';
@@ -13,18 +13,20 @@ import { Subject } from 'rxjs';
   standalone: true,
   imports: [LoadComponateComponent, CommonModule],
   templateUrl: './topbar.component.html',
-  styleUrl: './topbar.component.scss'
+  styleUrl: './topbar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopbarComponent {
   currentTemplate!: TemplateRef<any> | null;
   currentTitle!: string;
 
 
-  constructor(private templateRegistry: TemplateRegistryService, private titleService: TitleService, private router: Router) {
+  constructor(private templateRegistry: TemplateRegistryService, private titleService: TitleService, private router: Router,private cdr: ChangeDetectorRef) {
     this.titleService.getItem().subscribe(title => {
       if (title) {
         this.currentTitle = ''
-        this.currentTitle = title
+        this.currentTitle = title;
+        this.cdr.detectChanges(); // Trigger change detection
       }
     });
 
@@ -50,6 +52,7 @@ export class TopbarComponent {
     } else {
       this.currentTemplate = null
     }
+    this.cdr.detectChanges();
   }
 
 }

@@ -1,1 +1,383 @@
-<p>doctor-department works!</p>
+<div id="departmentList">
+    <div class="row g-3 mb-3 align-items-center">
+        <div class="col-xxl-3">
+            <h5 class="card-title mb-0">Department List</h5>
+        </div><!--end col-->
+        <div class="col-xxl-auto col-sm-6 ms-auto">
+            <div class="d-flex gap-2">
+                <div class="search-box">
+                    <input type="text" class="form-control search" placeholder="Search department name etc...">
+                    <i class="ri-search-line search-icon"></i>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div>
+                <div>
+                    <div class="table-responsive">
+                        <table class="table table-custom align-middle table-borderless table-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="option" id="checkAll">
+                                            <label class="form-check-label" for="checkAll"></label>
+                                        </div>
+                                    </th>
+                                    <th class="sort cursor-pointer" data-sort="departmentName">Department Name</th>
+                                    <th class="sort cursor-pointer" data-sort="head">Head of Dept.</th>
+                                    <th class="sort cursor-pointer" data-sort="description">Description</th>
+                                    <th class="sort cursor-pointer" data-sort="date">Date</th>
+                                    <th class="sort cursor-pointer" data-sort="status">Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list form-check-all">
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td class="departmentName">Dental</td>
+                                    <td class="head">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-xs me-2">
+                                                <img src="assets/images/doctor/user-1.jpg" class="img-fluid d-block rounded">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0"><a data-bs-toggle="modal" href="#overviewModal" class="text-reset head">Dr. Steven Frens</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="w-180 text-truncate description">
+                                            Dentistry, also known as dental medicine and oral medicine, is the branch of medicine focused on the teeth, gums, and mouth.
+                                        </div>
+                                    </td>
+                                    <td class="date">16 Jun, 2023</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static" ngbDropdown >
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#overviewModal"><i class="ph-eye align-middle me-1"></i> View</a></li>
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal" href="#showModal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB02</a></td>
+                                    <td class="department">Gastroenterologists</td>
+                                    <td class="head">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-xs me-2">
+                                                <img src="assets/images/doctor/user-2.jpg" class="img-fluid d-block rounded">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0"><a data-bs-toggle="modal" href="#overviewModal" class="text-reset head">Dr. Edith Amirian</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="w-180 text-truncate description">
+                                            The study of the normal function and diseases of the esophagus, stomach, small intestine, colon and rectum, pancreas, gallbladder, bile ducts and liver.
+                                        </div>
+                                    </td>
+                                    <td class="date">25 Aug, 2022</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static" ngbDropdown >
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#overviewModal"><i class="ph-eye align-middle me-1"></i> View</a></li>
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal" href="#showModal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td class="department">Neurologist</td>
+                                    <td class="head">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-xs me-2">
+                                                <img src="assets/images/doctor/user-3.jpg" class="img-fluid d-block rounded">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0"><a data-bs-toggle="modal" href="#overviewModal" class="text-reset head">Dr. Ciara Dowds</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="w-180 text-truncate description">
+                                            The neurologist treats disorders that affect the brain, spinal cord, and nerves, such as: Cerebrovascular disease, such as stroke. Demyelinating diseases of the central nervous system, such as multiple sclerosis.
+                                        </div>
+                                    </td>
+                                    <td class="date">08 Feb, 2019</td>
+                                    <td>
+                                        <span class="badge bg-danger-subtle text-danger status">In Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static" ngbDropdown >
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#overviewModal"><i class="ph-eye align-middle me-1"></i> View</a></li>
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal" href="#showModal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td class="department">General Surgeon</td>
+                                    <td class="head">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-xs me-2">
+                                                <div class="avatar-title bg-danger-subtle text-danger rounded">
+                                                    KR
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0"><a data-bs-toggle="modal" href="#overviewModal" class="text-reset head">Dr. Kinsley Rease</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="w-180 text-truncate description">
+                                            A general surgeon has specialized knowledge and experience related to the diagnosis, preoperative, operative, and postoperative management
+                                        </div>
+                                    </td>
+                                    <td class="date">11 Nov, 2020</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static" ngbDropdown >
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#overviewModal"><i class="ph-eye align-middle me-1"></i> View</a></li>
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal" href="#showModal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td class="department">Neurosurgeon</td>
+                                    <td class="head">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-xs me-2">
+                                                <img src="assets/images/doctor/user-4.jpg" class="img-fluid d-block rounded">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0"><a data-bs-toggle="modal" href="#overviewModal" class="text-reset head">Dr. Zion Ypina</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="w-180 text-truncate description">
+                                            It is the medical specialty concerned with the diagnosis and treatment of of patients with injury.
+                                        </div>
+                                    </td>
+                                    <td class="date">22 Oct, 2021</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static" ngbDropdown >
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#overviewModal"><i class="ph-eye align-middle me-1"></i> View</a></li>
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal" href="#showModal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td class="department">Urologist</td>
+                                    <td class="head">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-xs me-2">
+                                                <img src="assets/images/doctor/user-5.jpg" class="img-fluid d-block rounded">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0"><a data-bs-toggle="modal" href="#overviewModal" class="text-reset head">Dr. Julie Hatori</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="w-180 text-truncate description">
+                                            Branch of medicine that deals with health issues of the male and female urinary tract, and the male reproductive system..
+                                        </div>
+                                    </td>
+                                    <td class="date">02 July, 2021</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success status">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static" ngbDropdown >
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#overviewModal"><i class="ph-eye align-middle me-1"></i> View</a></li>
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal" href="#showModal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child">
+                                            <label class="form-check-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#TB01</a></td>
+                                    <td class="department">Rheumatologist</td>
+                                    <td class="head">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-xs me-2">
+                                                <img src="assets/images/doctor/user-6.jpg" class="img-fluid d-block rounded">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0"><a data-bs-toggle="modal" href="#overviewModal" class="text-reset head">Dr. Dylan Liburd</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="w-180 text-truncate description">
+                                            Internists who are qualified by additional postgraduate training and experience in the diagnosis and treatment of arthritis and other diseases of the joints, muscles and bones.
+                                        </div>
+                                    </td>
+                                    <td class="date">18 July, 2021</td>
+                                    <td>
+                                        <span class="badge bg-danger-subtle text-danger status">In Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown position-static" ngbDropdown >
+                                            <button class="btn btn-subtle-secondary btn-sm btn-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#overviewModal"><i class="ph-eye align-middle me-1"></i> View</a></li>
+                                                <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal" href="#showModal"><i class="ph-pencil align-middle me-1"></i> Edit</a></li>
+                                                <li><a class="dropdown-item remove-item-btn" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ph-trash align-middle me-1"></i> Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!--end table-responsive-->
+
+                    <div class="noresult" style="display: none">
+                        <div class="text-center py-4">
+                            <div class="avatar-md mx-auto mb-4">
+                                <div class="avatar-title bg-light text-primary rounded-circle fs-4xl">
+                                    <i class="bi bi-search"></i>
+                                </div>
+                            </div>
+                            <h5 class="mt-2">Sorry! No Result Found</h5>
+                            <p class="text-muted mb-0">We've searched more than 10+ departments We did not find any departments for you search.</p>
+                        </div>
+                    </div>
+                    <!-- end noresult -->
+
+                    <div class="row mb-4 align-items-center" id="pagination-element">
+                        <div class="col-sm">
+                            <div class="text-muted text-center text-sm-start">
+                                Showing <span class="fw-semibold">8</span> of <span class="fw-semibold">10</span> Results
+                            </div>
+                        </div>
+
+                        <div class="col-sm-auto mt-3 mt-sm-0">
+                            <ul class="pagination pagination-separated mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link">← Pre</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link">1</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link">Next →</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end pagination-element -->
+                </div>
+            </div><!--end card-->
+        </div><!--end col-->
+    </div><!--end row-->
+</div>

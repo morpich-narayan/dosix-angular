@@ -34,7 +34,6 @@ export class TemplateRegistryService {
   unregisterTemplate(key: string = 'template'): void {
     if (this.templates?.has(key)) {
       this.templates.delete(key);
-      console.log(`Template with key '${key}' unregistered.`);
     }
   }
 }

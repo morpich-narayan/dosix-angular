@@ -68,6 +68,12 @@ export const MENU: MenuItem[] = [
                 parentId: 2
             },
             {
+                id: 5,
+                label: 't-product-overview',
+                link: '/pages/ecommerce/apps-ecommerce-product-details',
+                parentId: 2
+            },
+            {
                 id: 6,
                 label: 't-shopping-cart',
                 link: '/pages/ecommerce/apps-ecommerce-cart',
@@ -83,12 +89,6 @@ export const MENU: MenuItem[] = [
                 id: 7,
                 label: 't-orders',
                 link: '/pages/ecommerce/apps-ecommerce-orders',
-                parentId: 2
-            },
-            {
-                id: 7,
-                label: 't-customers',
-                link: '/pages/ecommerce/apps-ecommerce-customers',
                 parentId: 2
             }
         ]
