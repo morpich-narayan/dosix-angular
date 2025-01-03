@@ -25,8 +25,8 @@
         <div class="vertical-menu-btn-wrapper header-item vertical-icon">
             <button type="button" class="btn btn-sm px-0 fs-xl vertical-menu-btn topnav-hamburger shadow hamburger-icon"
                 id="topnav-hamburger-icon">
-                <i class="bx bx-chevrons-right"></i>
-                <i class="bx bx-chevrons-left"></i>
+                <i class="bx bx-chevrons-right" (click)="changesize(SIDEBAR_SIZE.DEFAULT)"></i>
+                <i class="bx bx-chevrons-left" (click)="changesize(SIDEBAR_SIZE.SMALL)"></i>
             </button>
         </div>
     </div>

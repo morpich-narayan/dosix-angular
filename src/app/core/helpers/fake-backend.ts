@@ -4,6 +4,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { attachementsData, bookmarkData, callsData, ChannelsData, chatContactData, chatData, messages } from '../data/chat';
 import { orderList } from '../data/order';
+import { invoice, invoicesList } from '../data/invoice';
 
 
 @Injectable()
@@ -113,6 +114,33 @@ export class fakebackendInterceptor implements HttpInterceptor {
             if (request.url.endsWith('/app/orderList') && request.method === 'DELETE') {
                 const updatedUser = request.body;
                 if (orderList) {
+                    return of(new HttpResponse({ status: 200, body: updatedUser })); // respond 200 OK
+                } else {
+                    return throwError({ status: 401, error: { message: 'Unauthorised' } });
+                }
+            }
+
+            // get Invoice list
+            if (request.url.endsWith('/app/invoiceList') && request.method === 'GET') {
+                if (invoicesList) {
+                    return of(new HttpResponse({ status: 200, body: invoicesList }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+
+            // get Invoice
+            if (request.url.endsWith('/app/invoice') && request.method === 'GET') {
+                if (invoice) {
+                    return of(new HttpResponse({ status: 200, body: invoice }));
+                } else {
+                    return throwError({ status: 401, error: { message: 'No Data Found' } });
+                }
+            }
+            // DELETE seller list
+            if (request.url.endsWith('/app/invoiceList') && request.method === 'DELETE') {
+                const updatedUser = request.body;
+                if (invoicesList) {
                     return of(new HttpResponse({ status: 200, body: updatedUser })); // respond 200 OK
                 } else {
                     return throwError({ status: 401, error: { message: 'Unauthorised' } });

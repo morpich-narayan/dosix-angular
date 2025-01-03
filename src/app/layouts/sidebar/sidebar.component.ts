@@ -6,13 +6,17 @@ import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SimplebarAngularModule } from 'simplebar-angular';
 import { CommonModule } from '@angular/common';
+import { changesize } from '../../store/layouts/layout-action';
+import { RootReducerState } from '../../store';
+import { Store } from '@ngrx/store';
+import { LEFT_SIDEBAR_SIZE } from '../../store/layouts/layout';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  standalone:true,
-  imports:[SimplebarAngularModule,TranslateModule,CommonModule,RouterLink]
+  standalone: true,
+  imports: [SimplebarAngularModule, TranslateModule, CommonModule, RouterLink]
 })
 export class SidebarComponent {
   menu: any;
@@ -21,8 +25,9 @@ export class SidebarComponent {
   @ViewChild('sideMenu') sideMenu!: ElementRef;
   @Output() mobileMenuButtonClicked = new EventEmitter();
   lastroute: any;
+  SIDEBAR_SIZE = LEFT_SIDEBAR_SIZE;
 
-  constructor(private router: Router, public translate: TranslateService) {
+  constructor(private router: Router, public translate: TranslateService,private store: Store<RootReducerState>) {
     translate.setDefaultLang('en');
   }
 
@@ -66,7 +71,7 @@ export class SidebarComponent {
       item.classList.remove("active");
     });
   }
-  
+
   toggleItem(event: any, item: any) {
     item.isOpen = !item.isOpen;
     const isCurrentMenuId = event.target.closest('a.nav-link');
@@ -241,6 +246,10 @@ export class SidebarComponent {
    */
   SidebarHide() {
     document.body.classList.remove('vertical-sidebar-enable');
+  }
+
+  changesize(size: string) {
+    this.store.dispatch(changesize({ size }))
   }
 
 

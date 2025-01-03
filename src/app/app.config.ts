@@ -15,6 +15,7 @@ import { NGX_ECHARTS_CONFIG } from 'ngx-echarts';
 import * as echarts from 'echarts';
 import { OrdersEffects } from './store/Orders/order.effects';
 import { InvoiceEffects } from './store/Invoices/invoices.effects';
+import { LayoutEffects } from './store/layouts/layout-effects';
 
 export function createTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -31,7 +32,7 @@ export const appConfig: ApplicationConfig = {
       withInterceptorsFromDi(),
     ),
     { provide: HTTP_INTERCEPTORS, useClass: fakebackendInterceptor, multi: true },
-    provideEffects(ChatEffects,CRMEffects,OrdersEffects,InvoiceEffects),
+    provideEffects(ChatEffects,CRMEffects,OrdersEffects,InvoiceEffects,LayoutEffects),
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {

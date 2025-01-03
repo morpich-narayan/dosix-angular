@@ -11,3 +11,4 @@ export const changesidebarView = createAction('[Layout] Set sidebarView', props<
 export const changesidebarcolor = createAction('[Layout] Set sidebar', props<{ sidebar: string }>());
 export const changesidebarImage = createAction('[Layout] Set sidebarImage', props<{ sidebarImage: string }>());
 export const changepreLoader = createAction('[Layout] Set preLoader', props<{ preLoader: string }>());
+export const resetLayout = createAction('[Layout] Reset to Initial State');

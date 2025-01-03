@@ -36,7 +36,6 @@ export class InvoiceLayoutsComponent implements OnInit, AfterViewInit {
 
   updateTitle(title: string) {
     this.currentTitle = ''
-    console.log(title);
     this.currentTitle = title;
     this.titleService.setItem(this.currentTitle)
   }

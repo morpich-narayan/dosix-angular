@@ -17,7 +17,7 @@ import { OfflineComponent } from './auth/pages/offline/offline.component';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'pages',
+        redirectTo: 'auth',
         pathMatch: 'full',
     },
     {

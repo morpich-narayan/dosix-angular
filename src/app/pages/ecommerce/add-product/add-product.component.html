@@ -140,7 +140,7 @@
                     <div class="col-xxl-8">
                         <div class="mb-3">
                             <label class="form-label">Product Images <span class="text-danger">*</span></label>
-                            <dropzone class="dropzone" [config]="dropzoneConfig" [message]="'Drop files here or click to upload.'" (success)="onUploadSuccess($event)"></dropzone>
+                            <dropzone class="dropzone_sec" [config]="dropzoneConfig" [message]="'Drop files here or click to upload.'" (success)="onUploadSuccess($event)"></dropzone>
                             @if (uploadedFiles) {
                             <ul class="list-unstyled mb-0" id="dropzone-preview">
                                 @for (file of uploadedFiles; track $index) {

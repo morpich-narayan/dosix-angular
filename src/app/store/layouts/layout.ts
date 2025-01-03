@@ -20,7 +20,7 @@ const LAYOUT_THEME_TYPES = {
 
 const LAYOUT_WIDTH_TYPES = {
   FLUID: "fluid",
-  SCROLLABLE: "scrollable",
+  BOXED: "boxed",
 }
 
 const LAYOUT_POSITION_TYPES = {

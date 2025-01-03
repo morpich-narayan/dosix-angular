@@ -38,22 +38,22 @@
 
 .pagination-next,
 .pagination-prev {
-    color: var(--#{$prefix}primary);
+    color: $primary;
     font-weight: $font-weight-medium;
-    padding: $pagination-padding-y $pagination-padding-x;
+    // padding: $pagination-padding-y $pagination-padding-x;
     background-color: $pagination-bg;
     border: $pagination-border-width solid $pagination-border-color;
     border-radius: $border-radius; 
     &:hover {
-        color: var(--#{$prefix}primary-text);
+        color: lighten($primary, 20%);
     }
 
     &.disabled {
-        color: var(--#{$prefix}secondary-color);
+        color: $text-muted;
         cursor: default;
 
         &:hover {
-            color: var(--#{$prefix}secondary-color);
+            color: $text-muted;
         }
     }
 }

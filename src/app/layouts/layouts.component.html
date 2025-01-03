@@ -1,13 +1,9 @@
-<div id="layout-wrapper">
-    <app-topbar></app-topbar>
-    <app-sidebar></app-sidebar>
-    <div class="main-content">
-
-        <div class="page-content wrapper">
-            <div class="container-fluid">
-                <router-outlet></router-outlet>
-            </div>
-            <app-footer></app-footer>
-        </div>
-    </div>
-</div>
+@if (this.layoutData.LAYOUT === LAYOUT.VERTICAL) {
+    <app-vertical></app-vertical>
+}
+@if (this.layoutData.LAYOUT === LAYOUT.HORIZONTAL) {
+    <app-horizontal></app-horizontal>
+}
+@if (this.layoutData.LAYOUT === LAYOUT.TWOCOLUMN) {
+    <app-two-column></app-two-column>
+}

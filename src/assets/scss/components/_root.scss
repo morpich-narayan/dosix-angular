@@ -12,21 +12,19 @@
 @if $enable-dark-mode {
     @include color-mode(dark, true) {
         
-        &:is([data-theme="default"], [data-theme="minimal"], [data-theme="material"], [data-theme="modern"], [data-theme="creative"], [data-theme="interaction"]) {
-            --#{$prefix}light:                          #{$light-dark};
-            --#{$prefix}light-rgb:                      #{to-rgb($light-dark)};
-            --#{$prefix}light-text-emphasis:            #{$light-text-emphasis-dark};
-            --#{$prefix}light-bg-subtle:                #{$light-bg-subtle-dark};
-            --#{$prefix}light-border-subtle:            #{$light-bg-subtle-dark};
+        --#{$prefix}light:                          #{$light-dark};
+        --#{$prefix}light-rgb:                      #{to-rgb($light-dark)};
+        --#{$prefix}light-text-emphasis:            #{$light-text-emphasis-dark};
+        --#{$prefix}light-bg-subtle:                #{$light-bg-subtle-dark};
+        --#{$prefix}light-border-subtle:            #{$light-bg-subtle-dark};
 
-            --#{$prefix}dark:                           #{$dark-color};
-            --#{$prefix}dark-rgb:                       #{to-rgb($dark-color)};
-            --#{$prefix}dark-text-emphasis:             #{$dark-text-emphasis-dark};
-            --#{$prefix}dark-bg-subtle:                 #{$dark-bg-subtle-dark};
-            --#{$prefix}dark-border-subtle:             #{$dark-border-subtle-dark};
-            //custom color scheme
-            --#{$prefix}body-bg:                     #{$body-bg-dark};
-        }
+        --#{$prefix}dark:                           #{$dark-color};
+        --#{$prefix}dark-rgb:                       #{to-rgb($dark-color)};
+        --#{$prefix}dark-text-emphasis:             #{$dark-text-emphasis-dark};
+        --#{$prefix}dark-bg-subtle:                 #{$dark-bg-subtle-dark};
+        --#{$prefix}dark-border-subtle:             #{$dark-border-subtle-dark};
+        //custom color scheme
+        --#{$prefix}body-bg:                     #{$body-bg-dark};
 
         // card
         --#{$prefix}card-logo-dark:                 none;
