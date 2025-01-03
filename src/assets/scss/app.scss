@@ -106,3 +106,10 @@ File: Main Css File
 @import "pages/timeline";
 @import "pages/profile";
 @import "pages/pricing";
+
+// Rtl
+@import "rtl/components/components";
+@import "rtl/plugins/plugins";
+@import "rtl/structure/structure";
+@import "rtl/apps/apps";
+@import "rtl/pages/pages";

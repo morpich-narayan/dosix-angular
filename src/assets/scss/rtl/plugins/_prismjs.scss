@@ -1,0 +1,42 @@
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+:is(code, pre) {
+    &:is([class*="language-"]) {
+        text-align: right;
+    }
+}
+
+// Scroll-top
+
+#scroll-top {
+    left: 30px;
+    right: auto;
+}
+
+// Toolbar (Copy button)
+.btn-clipboard {
+    left: 15px !important;
+    right: auto !important;
+}
+
+// fullcalendar
+
+.fc-direction-ltr {
+    direction: rtl;
+}
+
+.fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
+    margin-right: 0.75em;
+}
+
+.calendar-event-card {
+    @media (min-width: 1600px) {
+        margin-right: calc(var(--#{$prefix}-grid-gutter-width) * -1);
+    }
+}
+
+
